@@ -1,0 +1,2 @@
+import React from'react';import{Link}from'react-router-dom';import{ArrowUpRight}from'lucide-react';
+export default function ProjectGrid({items}){return <div className="project-grid">{items.map((p,i)=><Link to={'/projects/'+p.slug} className={'project-card '+(i%3===1?'project-offset':'')} key={p.slug}><div className="project-image" data-image><img src={p.image} alt={p.name}/><span className="project-arrow"><ArrowUpRight/></span></div><div className="project-meta"><div><h3>{p.name}</h3><p>{p.type}</p></div><span>{p.year}</span></div></Link>)}</div>}

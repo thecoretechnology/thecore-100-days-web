@@ -1,0 +1,9 @@
+import React from'react';import{useParams,Link,Navigate}from'react-router-dom';import{ArrowLeft,ArrowUpRight}from'lucide-react';
+const cdn='https://cdn.prod.website-files.com/69e9e0fd0d86edd489a8f361/';
+const cases={
+'aura-watches':{name:'Aura Watches',category:'Visual Identity',image:cdn+'69ec6c29c9ceff538ebdc659_Project-1.avif',intro:'Elevating a premium watch brand through minimalist aesthetics and a sophisticated visual identity.'},
+'aura-e-commerce-app':{name:'Aura E-commerce App',category:'Brand Identity',image:cdn+'69ec6c0fd38284831b177d74_Project-2.avif',intro:'Designing an intuitive and luxury mobile shopping experience focusing on seamless user flows.'},
+'nexus-cloud-branding':{name:'Nexus Cloud Branding',category:'Visual Identity',image:cdn+'69ec6becaf532956de06d71b_Project-3.avif',intro:'Designing an intuitive and luxury digital identity for a next-generation cloud platform.'},
+'horizon-growth':{name:'Horizon Growth',category:'Digital Marketing',image:cdn+'69ec6bae102f3d08e9bee38d_Project-4.avif',intro:'Scaling a global tech brand through data-backed strategies and impactful social storytelling.'}
+};
+export default function ProjectDetail(){const{slug}=useParams();const p=cases[slug];if(!p)return <Navigate to="/"/>;return <div className="case-page"><section className="case-hero"><Link to="/projects" className="case-back"><ArrowLeft/> All Projects</Link><span className="eyebrow">({p.category}) · ©2026</span><h1>{p.name}</h1><p>{p.intro}</p></section><img className="case-image" src={p.image} alt={p.name}/><section className="case-copy"><span className="eyebrow">(Project Description)</span><h2>We Build Brands That Command Authority and Outlast Trends.</h2><p>{p.intro} Our work connects strategic clarity with high-end visual craft to create an experience that feels considered, distinctive and enduring.</p><Link className="pill-link" to="/contact">Start a Project <ArrowUpRight/></Link></section></div>}

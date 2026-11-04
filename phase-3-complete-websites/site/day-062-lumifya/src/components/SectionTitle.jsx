@@ -1,0 +1,1 @@
+import React from'react';export default function SectionTitle({label,title,children}){return <div className="section-title" data-reveal><p className="eyebrow">{label}</p><h2>{title}</h2>{children&&<div className="section-aside">{children}</div>}</div>}

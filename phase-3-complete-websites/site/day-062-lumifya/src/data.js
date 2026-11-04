@@ -1,0 +1,7 @@
+export const projects=[
+{slug:'forma-house',name:'Forma House',type:'Brand identity · Digital',year:'2025',image:'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1500&q=85',tone:'A considered identity for spaces that make room for living.'},
+{slug:'noir-objects',name:'Noir Objects',type:'Art direction · E-commerce',year:'2025',image:'https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1500&q=85',tone:'A digital flagship for objects with a point of view.'},
+{slug:'soma-wellness',name:'Soma Wellness',type:'Strategy · Identity',year:'2024',image:'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1500&q=85',tone:'A calmer kind of care, brought to life through a new brand world.'},
+{slug:'atelier-north',name:'Atelier North',type:'Campaign · Photography',year:'2024',image:'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1500&q=85',tone:'An editorial campaign rooted in material, light and form.'}
+];
+export const services=[['01','Brand strategy','Finding the sharpest expression of who you are.'],['02','Visual identity','Distinctive systems built to stay memorable.'],['03','Digital experiences','Thoughtful websites made to move people.'],['04','Art direction','A coherent visual world across every touchpoint.'],['05','Content & campaigns','Stories that give your brand momentum.']];
