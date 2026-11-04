@@ -1,5 +1,7 @@
 node_modules/
 dist/
+!phase-3-complete-websites/site/day-059-creatiq/dist
+!phase-3-complete-websites/site/day-059-creatiq/dist/**
 .astro/
 .next/
 .turbo/
