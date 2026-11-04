@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070704">
+  <meta name="description" content="Goldify is a premium concept platform for clear, explainable gold-market analysis and confident decision support.">
+  <title>Goldify — Intelligent Gold Market Analysis</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="gold-particles" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Goldify home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 9.2 15.7 3v12.3L4 21.7V9.2Zm13.9 6.7L28 10.4v12.3L17.9 29V15.9Z"/></svg>
+        <span>Goldify.</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span><span class="sr-only">Toggle menu</span></button>
+      <div class="nav-links" id="nav-links">
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="insights.html">Insights</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <a class="button button-light nav-cta" href="contact.html">Start Now</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-beams" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="hero-content">
+        <div class="eyebrow reveal" data-delay="0"><span>✦</span> WE ANALYZE YOUR DATA</div>
+        <h1 id="hero-title" class="reveal" data-delay="1">Smarter gold analysis for faster, <em>confident decisions</em></h1>
+        <p class="hero-copy reveal" data-delay="2">Harness explainable insights to explore gold trends, understand movement and make more informed decisions—all in one focused workspace.</p>
+        <div class="hero-actions reveal" data-delay="3">
+          <a class="button button-gold" href="contact.html"><span>✣</span> Start Today</a>
+          <a class="button button-glass" href="features.html">Explore Features <span>↗</span></a>
+        </div>
+      </div>
+
+      <div class="hero-stage" aria-label="Interactive gold market visualization">
+        <div class="orbit orbit-a" aria-hidden="true"></div>
+        <div class="orbit orbit-b" aria-hidden="true"></div>
+        <div class="coin coin-left tilt" data-tilt><span>AU</span><small>79</small></div>
+        <div class="market-core tilt" data-tilt>
+          <div class="core-ring"></div>
+          <div class="core-label"><small>GOLD / USD</small><strong>$2,347.82</strong><span>+1.84% today</span></div>
+        </div>
+        <div class="coin coin-right tilt" data-tilt><span>G</span><small>24K</small></div>
+        <div class="data-chip chip-one"><span>LIVE SIGNAL</span><b>Momentum rising</b></div>
+        <div class="data-chip chip-two"><span>CONFIDENCE</span><b>87.4%</b></div>
+      </div>
+      <a class="scroll-cue" href="#about"><span></span>Scroll to explore</a>
+    </section>
+
+    <section class="trust-strip" aria-label="Platform attributes">
+      <p>Designed for clear market thinking</p>
+      <div class="logo-row">
+        <span>QUANTUM</span><span>APEX</span><span>METRIX</span><span>ORBITAL</span><span>NORTHSTAR</span><span>VANTAGE</span>
+      </div>
+    </section>
+
+    <section class="section why" id="about">
+      <div class="section-heading reveal">
+        <div class="eyebrow"><span>✦</span> WHY GOLDIFY</div>
+        <h2>Built for market clarity,<br><em>designed for confidence.</em></h2>
+        <p>A focused concept for analysts and traders who want thoughtful tools, transparent signals and less noise.</p>
+      </div>
+      <div class="why-layout">
+        <div class="why-stack">
+          <article class="micro-card tilt reveal" data-tilt><span class="feature-icon">↗</span><h3>Real-time market tracking</h3><p>Follow price action and volatility in a clear, readable workspace.</p></article>
+          <article class="micro-card tilt reveal" data-tilt><span class="feature-icon">⌁</span><h3>Pattern recognition</h3><p>Surface meaningful structures without losing the market context around them.</p></article>
+        </div>
+        <div class="gold-visual reveal" data-cursor-light>
+          <div class="gold-disc"><i></i><i></i><i></i><span>G</span></div>
+          <div class="floating-grid"></div>
+          <span class="metric metric-a"><b>84%</b> signal clarity</span>
+          <span class="metric metric-b"><b>24/7</b> market view</span>
+        </div>
+        <div class="why-stack">
+          <article class="micro-card tilt reveal" data-tilt><span class="feature-icon">✣</span><h3>Explainable forecasts</h3><p>See the factors behind every scenario, not just a number or direction.</p></article>
+          <article class="micro-card tilt reveal" data-tilt><span class="feature-icon">⌾</span><h3>Smart dashboards</h3><p>Arrange watchlists, alerts and insights around the way you actually work.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section features" id="features">
+      <div class="section-heading centered reveal">
+        <div class="eyebrow"><span>✦</span> KEY FEATURES</div>
+        <h2>Features built for<br><em>gold-market focus.</em></h2>
+        <p>Four connected views turn complex market information into a composed, actionable workflow.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card tilt reveal" data-tilt>
+          <div><span class="card-index">01 / DASHBOARD</span><h3>Buy and sell signals,<br>shown in context</h3><p>Review trend direction, relevant levels and signal confidence without switching screens.</p></div>
+          <div class="dashboard-ui" aria-hidden="true">
+            <div class="ui-top"><span>GOLD / USD</span><b>LIVE</b></div>
+            <div class="chart-shell"><svg viewBox="0 0 520 180" preserveAspectRatio="none"><defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0c84b" stop-opacity=".45"/><stop offset="1" stop-color="#f0c84b" stop-opacity="0"/></linearGradient></defs><path class="chart-fill" d="M0 150 C55 146 62 92 115 108 S185 152 230 94 300 82 345 62 410 92 450 38 500 24 520 18 V180 H0Z"/><path class="chart-line" d="M0 150 C55 146 62 92 115 108 S185 152 230 94 300 82 345 62 410 92 450 38 500 24 520 18"/></svg><span class="chart-dot"></span></div>
+            <div class="ui-stats"><span><small>Trend</small><b>Bullish</b></span><span><small>Signal</small><b>Buy</b></span><span><small>Confidence</small><b>87.4%</b></span></div>
+          </div>
+        </article>
+        <article class="feature-card tilt reveal" data-tilt>
+          <div><span class="card-index">02 / CONTROL</span><h3>AI precision.<br>Human control.</h3><p>Explore clear scenarios and adjust assumptions while keeping every final decision yours.</p></div>
+          <div class="control-ui" aria-hidden="true">
+            <div class="control-orb"><span>AI</span><i></i><i></i><i></i></div>
+            <div class="control-row"><span>Volatility sensitivity</span><b>68</b><i style="--value:68%"></i></div>
+            <div class="control-row"><span>Macro weighting</span><b>42</b><i style="--value:42%"></i></div>
+            <div class="control-row"><span>Momentum window</span><b>76</b><i style="--value:76%"></i></div>
+          </div>
+        </article>
+        <article class="feature-card tilt reveal" data-tilt>
+          <div><span class="card-index">03 / COMPARE</span><h3>Before and after<br>analysis</h3><p>Compare raw data with a structured AI-assisted view to understand what changed and why.</p></div>
+          <div class="compare-ui" aria-hidden="true"><div><small>RAW MARKET</small><span class="raw-bars"><i></i><i></i><i></i><i></i><i></i></span></div><div class="compare-handle">⇄</div><div><small>ANALYZED VIEW</small><span class="signal-bars"><i></i><i></i><i></i><i></i><i></i></span></div></div>
+        </article>
+        <article class="feature-card tilt reveal" data-tilt>
+          <div><span class="card-index">04 / TECHNICAL</span><h3>Advanced technical<br>analysis</h3><p>Layer key levels, momentum and trend views into one calm, intentionally composed chart.</p></div>
+          <div class="technical-ui" aria-hidden="true">
+            <div class="candles"> <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <span class="trend-line"></span><span class="support-line">Support · 2,312</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section values">
+      <div class="section-heading reveal">
+        <div class="eyebrow"><span>✦</span> OUR VALUES</div>
+        <h2>The principles behind<br><em>the platform.</em></h2>
+        <p>Clarity, transparency and thoughtful control guide every interaction in this concept experience.</p>
+      </div>
+      <div class="value-grid">
+        <article class="value-card reveal"><span>01</span><i>◎</i><h3>Accuracy first</h3><p>Reliable inputs and visible assumptions keep each insight grounded.</p></article>
+        <article class="value-card reveal"><span>02</span><i>◇</i><h3>Clarity over complexity</h3><p>Complex information deserves a calm, structured presentation.</p></article>
+        <article class="value-card reveal"><span>03</span><i>◈</i><h3>Transparent by design</h3><p>Every scenario should show its reasoning, context and uncertainty.</p></article>
+        <article class="value-card reveal"><span>04</span><i>↗</i><h3>Speed with purpose</h3><p>Fast is valuable when it supports better understanding—not haste.</p></article>
+        <article class="value-card reveal"><span>05</span><i>◉</i><h3>Built around people</h3><p>Technology should support human judgement, never disguise it.</p></article>
+        <article class="value-card reveal"><span>06</span><i>✦</i><h3>Always improving</h3><p>Iterative systems make space for new data and changing conditions.</p></article>
+      </div>
+    </section>
+
+    <section class="mid-cta section reveal">
+      <div><div class="eyebrow"><span>✦</span> TAKE A CLOSER LOOK</div><h2>Ready to explore<br><em>a clearer market view?</em></h2><p>See how a more intentional analysis workflow can make complex information easier to understand.</p></div>
+      <div class="cta-coin tilt" data-tilt><span>G</span><small>GOLDIFY</small></div>
+      <a class="button button-gold" href="contact.html">Explore the concept <span>↗</span></a>
+    </section>
+
+    <section class="section process" id="process">
+      <div class="section-heading centered reveal"><div class="eyebrow"><span>✦</span> HOW IT WORKS</div><h2>From market data to<br><em>clearer next steps.</em></h2><p>A connected three-stage workflow keeps information, analysis and action in one place.</p></div>
+      <div class="process-grid">
+        <article class="process-card reveal"><span>01</span><div class="process-icon"><i></i><i></i><i></i></div><h3>Connect your data</h3><p>Bring together live pricing, watchlists and historical context in a single secure view.</p></article>
+        <article class="process-card featured reveal"><span>02</span><div class="process-icon ai"><b>AI</b><i></i></div><h3>Analyze the market</h3><p>Explore trends, volatility and momentum through explainable, visual scenarios.</p></article>
+        <article class="process-card reveal"><span>03</span><div class="process-icon nodes"><i></i><i></i><i></i><i></i></div><h3>Connect your tools</h3><p>Route alerts and useful outputs into the platforms already part of your workflow.</p></article>
+      </div>
+    </section>
+
+    <section class="section integrations">
+      <div class="section-heading centered reveal"><div class="eyebrow"><span>✦</span> INTEGRATIONS</div><h2>Connect your tools.</h2><p>A visual concept for bringing market feeds, charting and team workflows together.</p></div>
+      <div class="integration-orbit reveal" aria-label="Illustrative integrations">
+        <div class="integration-core"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 9.2 15.7 3v12.3L4 21.7V9.2Zm13.9 6.7L28 10.4v12.3L17.9 29V15.9Z"/></svg></div>
+        <span style="--a:0deg">MT</span><span style="--a:45deg">TV</span><span style="--a:90deg">API</span><span style="--a:135deg">CSV</span><span style="--a:180deg">BI</span><span style="--a:225deg">SL</span><span style="--a:270deg">DB</span><span style="--a:315deg">EX</span>
+      </div>
+      <p class="concept-note">Integration marks are illustrative placeholders for this frontend concept.</p>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="section-heading centered reveal"><div class="eyebrow"><span>✦</span> PRICING PLAN</div><h2>Choose your plan.</h2><p>Illustrative pricing for exploring the full Goldify product concept.</p></div>
+      <div class="billing-toggle" role="group" aria-label="Billing period"><button class="active" data-billing="monthly" type="button">Monthly</button><button data-billing="yearly" type="button">Yearly <span>10% off</span></button></div>
+      <div class="pricing-grid">
+        <article class="price-card tilt reveal" data-tilt><div class="plan-top"><i>◒</i><span>STARTER</span></div><div class="price"><span>$</span><b data-monthly="19" data-yearly="17">19</b><small>/month</small></div><p>For learning the workflow and monitoring a focused watchlist.</p><ul><li>Market overview dashboard</li><li>Daily scenario summaries</li><li>Three active alerts</li><li>Pattern recognition</li><li>CSV exports</li></ul><a class="button button-outline" href="contact.html?plan=starter">Get Started</a></article>
+        <article class="price-card popular tilt reveal" data-tilt><div class="popular-label">MOST POPULAR</div><div class="plan-top"><i>✦</i><span>PRO</span></div><div class="price"><span>$</span><b data-monthly="49" data-yearly="44">49</b><small>/month</small></div><p>For active analysts who need deeper views and flexible alerts.</p><ul><li>Advanced forecasting views</li><li>Real-time dashboards</li><li>Unlimited smart alerts</li><li>Scenario comparison</li><li>Priority integrations</li></ul><a class="button button-gold" href="contact.html?plan=pro">Get Started</a></article>
+        <article class="price-card tilt reveal" data-tilt><div class="plan-top"><i>◈</i><span>ENTERPRISE</span></div><div class="price"><span>$</span><b data-monthly="229" data-yearly="206">229</b><small>/month</small></div><p>For teams that need shared workspaces and tailored controls.</p><ul><li>Team analysis workspace</li><li>Custom data connections</li><li>Role-based controls</li><li>Audit-ready exports</li><li>Dedicated onboarding</li></ul><a class="button button-outline" href="contact.html?plan=enterprise">Contact Us</a></article>
+      </div>
+      <p class="concept-note">Pricing and product capabilities are illustrative; this Day 60 project does not provide financial advice or execute trades.</p>
+    </section>
+
+    <section class="section testimonials" aria-labelledby="testimonial-title">
+      <div class="section-heading reveal"><div class="eyebrow"><span>✦</span> EXPERIENCE NOTES</div><h2 id="testimonial-title">Designed for focused<br><em>market thinking.</em></h2><p>Illustrative roles show how the interface is intended to support different workflows.</p></div>
+      <div class="testimonial-shell reveal">
+        <button class="slider-button prev" type="button" aria-label="Previous experience note">←</button>
+        <div class="testimonial-track">
+          <article class="testimonial active"><blockquote>“The concept keeps the signal, context and confidence level together, making scenario review feel much more deliberate.”</blockquote><div><span>ANALYST WORKFLOW</span><small>Illustrative use case</small></div></article>
+          <article class="testimonial"><blockquote>“A calm visual hierarchy turns a crowded set of market inputs into a view that is easier to scan and discuss.”</blockquote><div><span>RESEARCH WORKFLOW</span><small>Illustrative use case</small></div></article>
+          <article class="testimonial"><blockquote>“Transparent assumptions and comparison views help keep human judgement present in every analytical step.”</blockquote><div><span>TEAM WORKFLOW</span><small>Illustrative use case</small></div></article>
+        </div>
+        <button class="slider-button next" type="button" aria-label="Next experience note">→</button>
+        <div class="slider-dots" aria-label="Experience note navigation"></div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="section-heading reveal"><div class="eyebrow"><span>✦</span> FAQS</div><h2>Need more details?</h2><p>What to know about this frontend product concept and its interactions.</p></div>
+      <div class="faq-list">
+        <details class="reveal" open><summary>What is Goldify?<span></span></summary><p>Goldify is a Day 60 frontend concept for a focused gold-market analysis experience. The interface demonstrates dashboards, scenarios, alerts and integration patterns; it is not connected to live trading infrastructure.</p></details>
+        <details class="reveal"><summary>Is the market data real-time?<span></span></summary><p>No. All figures displayed in this demonstration are static sample data created to show the interface and interactions.</p></details>
+        <details class="reveal"><summary>Does Goldify provide financial advice?<span></span></summary><p>No. Nothing on this concept site is financial, investment or trading advice, and the website cannot place trades.</p></details>
+        <details class="reveal"><summary>Can I try the interactions?<span></span></summary><p>Yes. Explore the pricing switch, experience notes, responsive menu, 3D card tilt, FAQs and enquiry form.</p></details>
+        <details class="reveal"><summary>Does the enquiry form send data?<span></span></summary><p>No backend is connected. Submitting validates your fields and clearly explains that integration is still required.</p></details>
+      </div>
+    </section>
+
+    <section class="section insights" id="insights">
+      <div class="section-heading reveal"><div class="eyebrow"><span>✦</span> INSIGHTS</div><h2>Gold market perspectives.</h2><p>Sample editorial content designed to demonstrate a premium resource area.</p></div>
+      <div class="article-grid">
+        <article class="article-card reveal"><div class="article-art art-one"><span>AU</span></div><div><small>MARKET BASICS · 6 MIN</small><h3>Reading price action without losing the bigger picture</h3><a href="#article-note">Read overview <span>↗</span></a></div></article>
+        <article class="article-card reveal"><div class="article-art art-two"><span>↗</span></div><div><small>WORKFLOW · 4 MIN</small><h3>How scenario thinking can improve analytical discipline</h3><a href="#article-note">Read overview <span>↗</span></a></div></article>
+        <article class="article-card reveal"><div class="article-art art-three"><span>◎</span></div><div><small>DESIGN · 5 MIN</small><h3>Why transparent interfaces build better financial tools</h3><a href="#article-note">Read overview <span>↗</span></a></div></article>
+      </div>
+      <p class="concept-note" id="article-note">Editorial cards are sample content for this frontend demonstration.</p>
+    </section>
+
+    <section class="final-cta">
+      <div class="final-beams" aria-hidden="true"></div>
+      <div class="eyebrow reveal"><span>✦</span> THINK CLEARER</div>
+      <h2 class="reveal">A more composed way to<br><em>explore gold markets.</em></h2>
+      <p class="reveal">Experience a polished concept where market information feels structured, explainable and under your control.</p>
+      <div class="hero-actions reveal"><a class="button button-gold" href="contact.html">Start Today</a><a class="button button-glass" href="features.html">Explore Features <span>↗</span></a></div>
+      <div class="final-orb" aria-hidden="true"><i></i><span>G</span></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <a class="brand footer-brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 9.2 15.7 3v12.3L4 21.7V9.2Zm13.9 6.7L28 10.4v12.3L17.9 29V15.9Z"/></svg><span>Goldify.</span></a>
+      <h2>AI precision.<br><em>Human control.</em></h2>
+      <p>A premium frontend concept for exploring clear, explainable gold-market analysis.</p>
+    </div>
+    <div class="footer-grid">
+      <div><h3>Stay in the loop</h3><p>Receive occasional product concept updates.</p><form class="newsletter" novalidate><label><span class="sr-only">Email address</span><input type="email" placeholder="Email address" required></label><button type="submit">Subscribe ↗</button><small role="status"></small></form></div>
+      <div><h3>Explore</h3><a href="about.html">About</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="insights.html">Insights</a></div>
+      <div><h3>More</h3><a href="features.html#workflow">How it works</a><a href="index.html#faq">FAQs</a><a class="footer-link" href="contact.html">Contact</a><a href="#top">Back to top</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Goldify concept. Day 60 of 100.</span><span>Frontend demonstration · Not financial advice</span></div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
