@@ -4,8 +4,8 @@
   "version": "1.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "dev": "vite --host 0.0.0.0 --open /app.html",
+    "build": "vite build && node scripts/publish-static.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

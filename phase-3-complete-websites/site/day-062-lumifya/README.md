@@ -21,11 +21,18 @@ npm install
 npm run dev
 ```
 
+Vite opens the source application at `/app.html`. The project root also contains
+the compiled `index.html` used by GitHub Pages.
+
 ## Production build
 
 ```bash
 npm run build
 npm run preview
 ```
+
+`npm run build` also publishes the compiled bundle to `index.html` and `assets/`
+so the Day 62 folder works directly on GitHub Pages without a separate build
+workflow.
 
 Images are referenced from the public Lumifya/Webflow CDN and require an internet connection.
