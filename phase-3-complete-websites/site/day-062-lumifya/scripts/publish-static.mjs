@@ -8,6 +8,7 @@ const publishedAssets = resolve(projectRoot, 'assets');
 
 mkdirSync(publishedAssets, { recursive: true });
 copyFileSync(resolve(distRoot, 'app.html'), resolve(projectRoot, 'index.html'));
+copyFileSync(resolve(distRoot, 'favicon.svg'), resolve(projectRoot, 'favicon.svg'));
 copyFileSync(resolve(distRoot, 'assets/app.js'), resolve(publishedAssets, 'app.js'));
 copyFileSync(resolve(distRoot, 'assets/app.css'), resolve(publishedAssets, 'app.css'));
 
