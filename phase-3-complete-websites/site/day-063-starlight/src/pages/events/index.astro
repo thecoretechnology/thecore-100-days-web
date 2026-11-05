@@ -1,0 +1,11 @@
+---
+import Layout from '../../components/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import FeatureCard from '../../components/FeatureCard.astro';
+import { events } from '../../data';
+---
+<Layout title="Events & Activities — Starlight Park" prefix="../" active="events">
+  <PageHero eyebrow="Events & activities" title="MEET US<br><em>OUTSIDE.</em>" copy="A changing programme of small gatherings, seasonal moments and practical ways to know the park better." image="gathering.jpg" accent="orange" prefix="../" />
+  <section class="section-pad"><div class="section-heading reveal"><p class="eyebrow">What’s happening</p><h2>MAKE A PLAN.<br />BRING A FRIEND.</h2></div><div class="card-grid three">{events.map((item, index) => <FeatureCard href={`${item.slug}/`} image={item.image} eyebrow={item.date} title={item.title} copy={item.summary} prefix="../" color={['orange','green','blue'][index]} />)}</div></section>
+  <section class="band-section blue reveal"><div><p class="eyebrow">Community programme</p><h2>YOUR IDEA<br />COULD LIVE HERE.</h2></div><div><p>We welcome thoughtful proposals for small public activities that fit the landscape and are open to a broad audience.</p><a class="white-button" href="../contact/">Start a conversation ↗</a></div></section>
+</Layout>

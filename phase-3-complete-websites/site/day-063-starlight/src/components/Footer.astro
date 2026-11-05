@@ -1,0 +1,22 @@
+---
+const { prefix = '' } = Astro.props;
+---
+<footer class="site-footer">
+  <div class="footer-newsletter">
+    <p class="eyebrow">Park notes, once a month</p>
+    <h2>GOOD NEWS<br />FROM OUTSIDE.</h2>
+    <form class="newsletter-form" data-newsletter novalidate>
+      <label class="sr-only" for="newsletter-email">Email address</label>
+      <input id="newsletter-email" type="email" placeholder="Email address" required />
+      <button type="submit" aria-label="Join newsletter">→</button>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+  </div>
+  <div class="footer-grid">
+    <div><a class="footer-brand" href={`${prefix}index.html`}>STARLIGHT<br />PARK</a><p>Open landscapes for curious minds.</p></div>
+    <div><p class="eyebrow">Explore</p><a href={`${prefix}experiences/`}>Experiences</a><a href={`${prefix}nature/`}>Nature & trails</a><a href={`${prefix}events/`}>Events</a><a href={`${prefix}gallery/`}>Gallery</a></div>
+    <div><p class="eyebrow">Plan</p><a href={`${prefix}visitor-info/`}>Visitor information</a><a href={`${prefix}about/`}>Our approach</a><a href={`${prefix}contact/`}>Contact</a></div>
+    <div><p class="eyebrow">Contact</p><a href="mailto:hello@starlightpark.example">hello@starlightpark.example</a><p>Visitor enquiries answered Monday–Friday.</p></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Starlight Park concept</span><a href="#top">Back to top ↑</a></div>
+</footer>

@@ -1,0 +1,29 @@
+---
+const { prefix = '', active = '' } = Astro.props;
+const links = [
+  ['about/', 'About'],
+  ['experiences/', 'Experiences'],
+  ['nature/', 'Nature'],
+  ['events/', 'Events'],
+  ['gallery/', 'Gallery'],
+  ['visitor-info/', 'Visit'],
+];
+---
+<header class="site-header" data-header>
+  <a class="brand" href={`${prefix}index.html`} aria-label="Starlight Park home">STARLIGHT PARK</a>
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    {links.map(([href, label]) => (
+      <a class:list={{ active: active === href.replace('/', '') }} href={`${prefix}${href}`}>{label}</a>
+    ))}
+  </nav>
+  <a class="contact-pill" href={`${prefix}contact/`}>Contact <span>↗</span></a>
+  <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+    <span></span><span></span>
+  </button>
+</header>
+<div class="mobile-menu" data-mobile-menu>
+  <nav aria-label="Mobile navigation">
+    {links.map(([href, label], index) => <a href={`${prefix}${href}`}><small>0{index + 1}</small>{label}</a>)}
+    <a href={`${prefix}contact/`}><small>07</small>Contact</a>
+  </nav>
+</div>

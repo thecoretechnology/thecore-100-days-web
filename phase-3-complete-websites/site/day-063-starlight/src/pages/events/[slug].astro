@@ -1,0 +1,15 @@
+---
+import Layout from '../../components/Layout.astro';
+import { events } from '../../data';
+export function getStaticPaths() {
+  return events.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+const { item } = Astro.props;
+---
+<Layout title={`${item.title} — Starlight Park`} prefix="../../" active="events">
+  <section class="detail-hero card-orange">
+    <div class="detail-copy hero-animate"><a class="back-link" href="../">← All events</a><p class="eyebrow">{item.date}</p><h1>{item.title}</h1><p>{item.summary}</p><a class="dark-button" href="../../contact/">Ask about this event <span>→</span></a></div>
+    <div class="detail-image hero-image"><img src={`../../images/${item.image}`} alt={`${item.title} event`} /></div>
+  </section>
+  <section class="event-details section-pad"><div class="reveal"><p class="eyebrow">Good to know</p><h2>COME AS<br />YOU ARE.</h2></div><div class="detail-prose reveal"><p>Events are designed to be welcoming, low-pressure additions to a normal day in the park. Unless a listing says otherwise, no specialist equipment is needed.</p><p>Exact seasonal dates and access information would be published here once the programme is confirmed.</p></div></section>
+</Layout>

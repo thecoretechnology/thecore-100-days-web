@@ -1,0 +1,11 @@
+---
+const { eyebrow, title, copy, image, accent = 'mint', prefix = '../' } = Astro.props;
+---
+<section class:list={["page-hero", `accent-${accent}`]}>
+  <div class="page-hero-copy hero-animate">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1 set:html={title}></h1>
+    <p>{copy}</p>
+  </div>
+  {image && <div class="page-hero-media hero-image"><img src={`${prefix}images/${image}`} alt="" /></div>}
+</section>

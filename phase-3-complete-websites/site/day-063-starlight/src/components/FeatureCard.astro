@@ -1,0 +1,9 @@
+---
+const { href, image, eyebrow, title, copy, prefix = '../', color = 'blue' } = Astro.props;
+---
+<article class:list={["feature-card", `card-${color}`, "reveal"]}>
+  <a href={href} aria-label={`Read about ${title}`}>
+    <div class="feature-image"><img src={`${prefix}images/${image}`} alt="" loading="lazy" /></div>
+    <div class="feature-copy"><p class="eyebrow">{eyebrow}</p><h3>{title}</h3><p>{copy}</p><span>Explore <b>↗</b></span></div>
+  </a>
+</article>

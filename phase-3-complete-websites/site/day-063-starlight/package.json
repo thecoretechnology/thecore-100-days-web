@@ -1,0 +1,11 @@
+{
+  "name": "day-063-starlight",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node ../../node_modules/astro/bin/astro.mjs dev --host 0.0.0.0",
+    "build": "node ../../node_modules/astro/bin/astro.mjs build && node scripts/publish-static.mjs",
+    "preview": "node ../../node_modules/astro/bin/astro.mjs preview --host 0.0.0.0"
+  }
+}

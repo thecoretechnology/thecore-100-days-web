@@ -1,0 +1,18 @@
+---
+import Layout from '../../components/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+---
+<Layout title="Contact — Starlight Park" prefix="../">
+  <PageHero eyebrow="Reach out" title="LET’S MEET<br><em>IN THE PARK.</em>" copy="Ask about access, events, group visits or sharing a thoughtful programme idea." image="green-path.jpg" accent="green" prefix="../" />
+  <section class="contact-layout section-pad">
+    <div class="contact-intro reveal"><p class="eyebrow">Choose a topic</p><h2>WE’LL POINT YOUR MESSAGE IN THE RIGHT DIRECTION.</h2><p>This demonstration form validates locally. A secure form service must be connected before messages can be transmitted.</p><a href="mailto:hello@starlightpark.example">hello@starlightpark.example ↗</a></div>
+    <form class="contact-form reveal" data-contact-form novalidate>
+      <fieldset><legend>What can we help with?</legend><label><input type="radio" name="topic" value="visit" checked /> A visit</label><label><input type="radio" name="topic" value="event" /> An event</label><label><input type="radio" name="topic" value="access" /> Access</label></fieldset>
+      <label>Your name<input type="text" name="name" autocomplete="name" required /></label>
+      <label>Email address<input type="email" name="email" autocomplete="email" required /></label>
+      <label>Your message<textarea name="message" rows="5" required minlength="10"></textarea></label>
+      <button class="dark-button" type="submit">Prepare enquiry <span>→</span></button>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+  </section>
+</Layout>

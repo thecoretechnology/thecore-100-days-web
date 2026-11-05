@@ -1,0 +1,59 @@
+---
+import Layout from '../components/Layout.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import { experiences } from '../data';
+---
+<Layout title="Starlight Park — Parks Like No Other" prefix="">
+  <section class="home-hero">
+    <div class="hero-copy hero-animate">
+      <p class="eyebrow hero-kicker">A public landscape for everyone</p>
+      <h1>WE MAKE<br />PARKS LIKE<br />NO OTHER</h1>
+      <p class="hero-lede">A playful landscape where wilder nature, thoughtful design and everyday life meet.</p>
+      <a class="orbit-link" href="experiences/" aria-label="Explore Starlight Park"><span>→</span></a>
+    </div>
+    <div class="floating-park hero-image">
+      <span class="cloud cloud-a" aria-hidden="true"></span><span class="cloud cloud-b" aria-hidden="true"></span>
+      <span class="park-label label-a">Wild Meadow</span><span class="park-label label-b">River Walk</span>
+      <img src="images/floating-starlight-park.png" alt="A floating island park with paths, trees and waterfalls" />
+    </div>
+  </section>
+
+  <section class="intro-section section-pad">
+    <div class="split-heading reveal"><p class="eyebrow">Start exploring</p><h2>OUTSIDE IS<br /><span>FULL OF IDEAS.</span></h2></div>
+    <div class="intro-copy reveal"><p>Starlight Park is imagined as a living public landscape: part habitat, part playground and part neighbourhood meeting place. Every route offers a new way to move, pause or notice what is around you.</p><a class="text-link" href="about/">Our approach <span>→</span></a></div>
+  </section>
+
+  <section class="experience-strip section-pad">
+    <div class="section-heading reveal"><p class="eyebrow">Attractions</p><h2>CHOOSE YOUR<br />WAY TO PLAY.</h2><a class="pill-button" href="experiences/">See all experiences ↗</a></div>
+    <div class="card-grid three">
+      {experiences.map((item) => <FeatureCard href={`experiences/${item.slug}/`} image={item.image} eyebrow={item.kicker} title={item.title} copy={item.summary} prefix="" color={item.tone} />)}
+    </div>
+  </section>
+
+  <section class="location-showcase">
+    <div class="location-title reveal"><p>Harmony Glade</p><h2>NEW YORK</h2></div>
+    <div class="location-scene reveal"><img src="images/forest-trail.jpg" alt="Sunlight filtering through a green forest trail" loading="lazy" /></div>
+    <p class="location-copy reveal">A generous urban woodland with open lawns, creekside paths and space to gather.</p>
+    <a class="text-link reveal" href="visitor-info/">Plan a visit <span>→</span></a>
+  </section>
+
+  <section class="values-section section-pad">
+    <div class="split-heading reveal"><p class="eyebrow">Eco values</p><h2>DESIGNED TO<br /><span>GROW WILDER.</span></h2></div>
+    <div class="values-grid">
+      <article class="value-item reveal"><b>01</b><h3>BIODIVERSITY</h3><p>Connected habitats, native planting and seasonal care help wildlife move through the park.</p></article>
+      <article class="value-item reveal"><b>02</b><h3>LOW-IMPACT</h3><p>Durable materials, shaded routes and water-aware planting guide each design decision.</p></article>
+      <article class="value-item reveal"><b>03</b><h3>SHARED STEWARDSHIP</h3><p>Clear learning moments invite visitors to understand and care for the landscape together.</p></article>
+    </div>
+  </section>
+
+  <section class="mission-collage section-pad">
+    <img class="collage-a parallax" src="images/friends-park.jpg" alt="Friends enjoying time outdoors" loading="lazy" />
+    <img class="collage-b parallax" src="images/gathering.jpg" alt="A relaxed outdoor gathering" loading="lazy" />
+    <div class="mission-copy reveal"><p class="eyebrow">Our mission</p><h2>NATURAL SPACES FOR ENJOYMENT, EDUCATION AND A MORE RESILIENT FUTURE.</h2><p>We make room for everyday wonder: a shaded bench, a lively stream, a first sighting of a butterfly or an evening shared beneath the trees.</p></div>
+    <img class="collage-c parallax" src="images/green-path.jpg" alt="A green woodland path" loading="lazy" />
+  </section>
+
+  <section class="visit-cta reveal">
+    <p class="eyebrow">Make a day of it</p><h2>YOUR NEXT<br />GOOD DAY<br />IS OUTSIDE.</h2><a class="white-button" href="visitor-info/">Visitor information ↗</a>
+  </section>
+</Layout>

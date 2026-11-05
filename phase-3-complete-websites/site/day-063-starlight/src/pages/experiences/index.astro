@@ -1,0 +1,11 @@
+---
+import Layout from '../../components/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import FeatureCard from '../../components/FeatureCard.astro';
+import { experiences } from '../../data';
+---
+<Layout title="Experiences & Attractions — Starlight Park" prefix="../" active="experiences">
+  <PageHero eyebrow="Experiences & attractions" title="FOLLOW YOUR<br><em>CURIOSITY.</em>" copy="Climb, listen, wander, make and look closer. Every experience is part of the landscape rather than placed on top of it." image="river-walk.jpg" accent="blue" prefix="../" />
+  <section class="section-pad"><div class="section-heading reveal"><p class="eyebrow">Park highlights</p><h2>THREE PLACES.<br />THREE WAYS IN.</h2></div><div class="card-grid three">{experiences.map((item) => <FeatureCard href={`${item.slug}/`} image={item.image} eyebrow={item.kicker} title={item.title} copy={item.summary} prefix="../" color={item.tone} />)}</div></section>
+  <section class="band-section orange reveal"><div><p class="eyebrow">Something for the whole day</p><h2>MOVE FAST.<br />THEN GO SLOW.</h2></div><p>Active zones are balanced by generous lawns, shaded seating, water fountains and quiet routes. You can build a full day or simply stop by for twenty minutes.</p></section>
+</Layout>

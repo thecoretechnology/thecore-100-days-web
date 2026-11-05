@@ -1,0 +1,10 @@
+---
+import Layout from '../../components/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { trails } from '../../data';
+---
+<Layout title="Nature & Trails — Starlight Park" prefix="../" active="nature">
+  <PageHero eyebrow="Nature & trails" title="TAKE THE<br><em>LONG WAY.</em>" copy="Woodland, meadow, water and open sky are stitched together by a network of clear, characterful trails." image="forest-trail.jpg" accent="green" prefix="../" />
+  <section class="trail-list section-pad"><div class="section-heading reveal"><p class="eyebrow">Choose a route</p><h2>THREE TRAILS.<br />NO WRONG TURN.</h2></div>{trails.map((trail, index) => <a class="trail-row reveal" href={`${trail.slug}/`}><span>0{index + 1}</span><div><h3>{trail.title}</h3><p>{trail.summary}</p></div><strong>{trail.meta}</strong><img src={`../images/${trail.image}`} alt="" loading="lazy" /><b>↗</b></a>)}</section>
+  <section class="nature-note reveal"><img src="../images/wildflower.jpg" alt="Native wildflowers" loading="lazy" /><div><p class="eyebrow">Tread lightly</p><h2>THE PARK IS<br />A LIVING SYSTEM.</h2><p>Stay on marked paths in sensitive areas, give wildlife space and leave what you find. Small choices keep the landscape healthy for everyone.</p></div></section>
+</Layout>

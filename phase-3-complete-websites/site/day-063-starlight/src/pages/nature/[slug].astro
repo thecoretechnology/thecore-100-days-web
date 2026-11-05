@@ -1,0 +1,15 @@
+---
+import Layout from '../../components/Layout.astro';
+import { trails } from '../../data';
+export function getStaticPaths() {
+  return trails.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+const { item } = Astro.props;
+---
+<Layout title={`${item.title} — Starlight Park`} prefix="../../" active="nature">
+  <section class="detail-hero card-green">
+    <div class="detail-copy hero-animate"><a class="back-link" href="../">← All trails</a><p class="eyebrow">{item.meta}</p><h1>{item.title}</h1><p>{item.summary}</p><a class="dark-button" href="../../visitor-info/">Visitor information <span>→</span></a></div>
+    <div class="detail-image hero-image"><img src={`../../images/${item.image}`} alt={`${item.title} trail`} /></div>
+  </section>
+  <section class="route-facts section-pad"><article class="reveal"><span>01</span><h2>TAKE YOUR TIME.</h2><p>Follow the wayfinding markers and pause at the overlooks along the route.</p></article><article class="reveal"><span>02</span><h2>SHARE THE PATH.</h2><p>Keep left where possible and give wildlife, wheels and fellow visitors room.</p></article><article class="reveal"><span>03</span><h2>LEAVE IT WILD.</h2><p>Stay on the marked route in sensitive areas and take all waste with you.</p></article></section>
+</Layout>

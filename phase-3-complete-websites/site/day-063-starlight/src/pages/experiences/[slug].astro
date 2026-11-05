@@ -1,0 +1,16 @@
+---
+import Layout from '../../components/Layout.astro';
+import { experiences } from '../../data';
+export function getStaticPaths() {
+  return experiences.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+const { item } = Astro.props;
+---
+<Layout title={`${item.title} — Starlight Park`} prefix="../../" active="experiences">
+  <section class:list={["detail-hero", `card-${item.tone}`]}>
+    <div class="detail-copy hero-animate"><a class="back-link" href="../">← All experiences</a><p class="eyebrow">{item.kicker}</p><h1>{item.title}</h1><p>{item.summary}</p><a class="dark-button" href="../../visitor-info/">Plan your visit <span>→</span></a></div>
+    <div class="detail-image hero-image"><img src={`../../images/${item.image}`} alt={`${item.title} at Starlight Park`} /></div>
+  </section>
+  <section class="detail-story section-pad"><div class="reveal"><p class="eyebrow">Designed for discovery</p><h2>LOOK CLOSER.<br />STAY LONGER.</h2></div><div class="detail-prose reveal"><p>Each Starlight experience is shaped by its setting. Materials, planting and movement work together so the activity feels like a natural part of the park.</p><p>Clear routes and resting points make the experience welcoming for mixed ages and different ways of moving through the landscape.</p></div></section>
+  <section class="wide-image reveal"><img src="../../images/green-path.jpg" alt="A winding green park path" loading="lazy" /></section>
+</Layout>

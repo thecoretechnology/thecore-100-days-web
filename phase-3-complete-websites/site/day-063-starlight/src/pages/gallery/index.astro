@@ -1,0 +1,10 @@
+---
+import Layout from '../../components/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+const images = ['forest-trail.jpg','friends-park.jpg','river-walk.jpg','wildflower.jpg','gathering.jpg','lake-trail.jpg','meadow.jpg','sunset-ridge.jpg','green-path.jpg'];
+---
+<Layout title="Gallery — Starlight Park" prefix="../" active="gallery">
+  <PageHero eyebrow="Park gallery" title="A FEW WAYS<br>TO SEE <em>STARLIGHT.</em>" copy="A visual field guide to the park’s paths, people, planting and changing light." image="sunset-ridge.jpg" accent="blue" prefix="../" />
+  <section class="gallery-grid section-pad" data-gallery>{images.map((image, index) => <button class:list={["gallery-item", `gallery-item-${index + 1}`, "reveal"]} type="button" data-gallery-item data-src={`../images/${image}`} aria-label={`Open gallery image ${index + 1}`}><img src={`../images/${image}`} alt={`Starlight Park view ${index + 1}`} loading="lazy" /></button>)}</section>
+  <dialog class="lightbox" data-lightbox><button type="button" aria-label="Close image" data-lightbox-close>×</button><img src="" alt="Expanded park view" /></dialog>
+</Layout>
