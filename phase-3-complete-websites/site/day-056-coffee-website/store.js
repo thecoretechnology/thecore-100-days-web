@@ -1,6 +1,6 @@
 (function(){
   const KEY='brewora-cart-v1';
-  const money=new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0});
+  const money=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2});
   const product=id=>window.BREWORA_PRODUCTS.find(item=>item.id===id);
   const read=()=>{try{const value=JSON.parse(localStorage.getItem(KEY));return Array.isArray(value)?value.filter(item=>product(item.id)&&item.quantity>0):[]}catch{return[]}};
   const save=cart=>{localStorage.setItem(KEY,JSON.stringify(cart));window.dispatchEvent(new CustomEvent('brewora:cart'));return cart};

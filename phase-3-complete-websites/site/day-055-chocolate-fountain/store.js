@@ -1,7 +1,7 @@
 (function () {
   const CART_KEY = 'velora-cart-v2';
   const ORDER_KEY = 'velora-last-order-v1';
-  const money = new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0});
+  const money = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2});
   const getProduct = (id) => window.VELORA_PRODUCTS.find((product) => product.id === id);
   function read(key,fallback){try{const value=JSON.parse(localStorage.getItem(key));return value ?? fallback}catch{return fallback}}
   function getCart(){const cart=read(CART_KEY,[]);return Array.isArray(cart)?cart.filter(item=>getProduct(item.id)&&item.quantity>0):[]}
