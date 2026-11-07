@@ -1,7 +1,7 @@
 const services=[
 ["🦷","Aesthetic Dentistry","Natural-looking smile enhancements and cosmetic treatments.","aesthetic-dentistry","https://klinikrespirasimalang.com/images/berita/1401-periksagigi.jpeg"],
 ["✧","Orthodontics","Personalized alignment treatments for a confident smile.","orthodontics","https://wildwooddentalclinic.com/images/bugherd/Whitening_100.png"],
-["◈","Implantology","Durable, natural-looking replacements for missing teeth.","implantology","https://texasperiodontal.com/thedentalsitecontent/1002308/blog/dental-implants-vs-dentures.jpg"],
+["◈","Implantology","Durable, natural-looking replacements for missing teeth.","implantology","https://www.google.com/imgres?q=implantology&imgurl=http%3A%2F%2Fwww.drbillkucko.com%2Fuploads%2F3%2F0%2F2%2F0%2F3020533%2Fimplant-pic_orig.jpg&imgrefurl=http%3A%2F%2Fwww.drbillkucko.com%2Fimplantology--what-is-an-implant-and-who-does-it-best.html&docid=zNf7pSDNnd-LYM&tbnid=idtFjeBcs2OeaM&vet=12ahUKEwim5JK6mfaXAxXEU2wGHXAtHFMQnPAOegQILxAA..i&w=570&h=324&hcb=2&ved=2ahUKEwim5JK6mfaXAxXEU2wGHXAtHFMQnPAOegQILxAA"],
 ["✦","Whitening","Professional whitening for a radiant, brighter smile.","whitening","https://wildwooddentalclinic.com/images/bugherd/Whitening_100.png"],
 ["🦷","Surgical Dentistry","Gentle, expert surgical care when you need it.","surgical-dentistry","https://www.primadent.pl/upload/gallery/47/-502274bd5d402.jpg"],
 ["✧","General Dentistry","Routine checkups and cleanings to keep your teeth healthy.","general-dentistry","https://klinikrespirasimalang.com/images/berita/1401-periksagigi.jpeg"],
