@@ -1,0 +1,3 @@
+
+.reveal{opacity:0;transform:translateY(28px)}.is-visible{opacity:1;transform:none}.hero-copy>*{will-change:transform,opacity}.hero-photo{will-change:transform}.program-row img{will-change:transform}.footer-sun{will-change:transform}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}

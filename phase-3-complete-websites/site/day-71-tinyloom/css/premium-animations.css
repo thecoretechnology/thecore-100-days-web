@@ -1,0 +1,44 @@
+/* Motion-safe presentation helpers for the Tinyloom GSAP system. */
+html.motion-ready .page-transition {
+  position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  background: #f4a08c; transform: scaleY(0); transform-origin: bottom;
+}
+html.motion-ready .nav-link { position: relative; }
+html.motion-ready .nav-link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 2px;
+  border-radius: 99px; background: currentColor; transform: scaleX(0); transform-origin: left;
+  transition: transform .24s ease;
+}
+html.motion-ready .nav-link:hover::after,
+html.motion-ready .nav-link:focus-visible::after,
+html.motion-ready .nav-link.nav-hovered::after,
+html.motion-ready .nav-link[aria-current="page"]::after { transform: scaleX(1); }
+html.motion-ready .value-card, html.motion-ready .journey-card,
+html.motion-ready .testimonial-card, html.motion-ready .belief-grid article,
+html.motion-ready .price-card, html.motion-ready .program-card,
+html.motion-ready .journal-card, html.motion-ready .team-grid article,
+html.motion-ready .activity-grid article { transform-style: preserve-3d; will-change: transform; }
+html.motion-ready .learning-photo img, html.motion-ready .choose-photo img,
+html.motion-ready .journey-image img, html.motion-ready .activity-photo img,
+html.motion-ready .program-image img, html.motion-ready .split-photo img,
+html.motion-ready .inner-hero-art img, html.motion-ready .blog-image img,
+html.motion-ready .not-found-art img { will-change: clip-path, transform; }
+html.motion-ready .hero-sun, html.motion-ready .footer-sun,
+html.motion-ready .hero-sticker, html.motion-ready .hero-photo-left,
+html.motion-ready .hero-photo-right, html.motion-ready .cta-flower,
+html.motion-ready .cta-star { will-change: transform; }
+@media (max-width: 760px) {
+  html.motion-ready .page-transition { background: #f4a08c; }
+  html.motion-ready .value-card, html.motion-ready .journey-card,
+  html.motion-ready .testimonial-card, html.motion-ready .belief-grid article,
+  html.motion-ready .price-card, html.motion-ready .program-card,
+  html.motion-ready .journal-card, html.motion-ready .team-grid article,
+  html.motion-ready .activity-grid article { will-change: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.motion-ready *, html.motion-ready *::before, html.motion-ready *::after {
+    scroll-behavior: auto !important; animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important; transition-duration: .01ms !important;
+  }
+  .page-transition { display: none !important; }
+}

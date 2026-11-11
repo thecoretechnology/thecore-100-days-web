@@ -1,0 +1,25 @@
+/* Functional controls: intentionally neutral so the established Tinyloom look remains intact. */
+.social-placeholder{display:grid;place-items:center;width:32px;height:32px;border:1px solid #647168;border-radius:50%;font-size:11px;color:inherit;opacity:.72;cursor:default}
+.footer-social .social-placeholder{width:33px;height:33px;border-color:#607078;font-size:10px;font-weight:900}
+.nav-link[aria-current="page"]{color:var(--rose)}
+.filter-btn[aria-pressed="true"]{font-weight:800}
+.journal-card[hidden],.empty-filter[hidden]{display:none!important}
+.program-card[role="link"]{cursor:pointer}
+.program-card[role="link"]:focus-visible,.filter-btn:focus-visible,.menu-toggle:focus-visible,.swiper-prev:focus-visible,.swiper-next:focus-visible,.back-to-top:focus-visible{outline:3px solid var(--rose);outline-offset:4px}
+.enquiry-form .form-error{color:#b42318}
+.enquiry-form .form-success{color:#247347}
+.enquiry-form.was-validated input:invalid,.enquiry-form.was-validated select:invalid,.enquiry-form.was-validated textarea:invalid{border-color:#c24135}
+.back-to-top{position:fixed;right:24px;bottom:24px;z-index:90;width:46px;height:46px;border:0;border-radius:50%;background:var(--rose);color:#fff;box-shadow:0 8px 24px #26342a24;font:700 22px/1 var(--font-head);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s ease,transform .25s ease,visibility .25s ease;cursor:pointer}
+.back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+@media(max-width:800px){.main-nav.is-open{display:flex}.menu-toggle{cursor:pointer}.back-to-top{right:16px;bottom:16px;width:42px;height:42px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.back-to-top{transition:none}}
+.testimonial-swiper.is-native-slider{overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory}
+.testimonial-swiper.is-native-slider::-webkit-scrollbar{display:none}
+.testimonial-swiper.is-native-slider .swiper-wrapper{display:flex;transform:none!important;transition:none!important}
+.testimonial-swiper.is-native-slider .swiper-slide{flex:0 0 min(86%,390px);scroll-snap-align:start}
+.swiper-prev:disabled,.swiper-next:disabled{opacity:.38;cursor:not-allowed}
+#enroll{scroll-margin-top:100px}
+.menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.menu-toggle span{transition:transform .2s ease}
+@media(prefers-reduced-motion:reduce){.menu-toggle span{transition:none}}
