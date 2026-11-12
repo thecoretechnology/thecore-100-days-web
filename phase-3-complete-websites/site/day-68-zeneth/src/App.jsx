@@ -170,7 +170,7 @@ function Header(){
   </>
 }
 
-function Button({children='Explore us',href='#contact',dark=false,arrow=true}){return <a className={`button ${dark?'button-dark':'button-light'}`} href={href}>{children}{arrow&&<ArrowUpRight size={16}/>}</a>}
+function Button({children='Explore us',href='#contact',dark=false,arrow=true}){const className=`button ${dark?'button-dark':'button-light'}`;const content=<>{children}{arrow&&<ArrowUpRight size={16}/>}</>;return href.startsWith('/')?<Link className={className} to={href}>{content}</Link>:<a className={className} href={href}>{content}</a>}
 function SectionIntro({label,title,children,light=false}){return <div className={`section-intro ${light?'light':''}`}>{label&&<span className="eyebrow">{label}</span>}<h2>{title}</h2>{children&&<p>{children}</p>}</div>}
 function Reveal({children,className=''}){const ref=useRef(null);useGSAP(()=>{gsap.fromTo(ref.current,{y:55,autoAlpha:0},{y:0,autoAlpha:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:ref.current,start:'top 88%',once:true}})},{scope:ref});return <div ref={ref} className={className}>{children}</div>}
 function ImageReveal({src,alt='',className=''}){const ref=useRef(null);useGSAP(()=>{const el=ref.current;gsap.fromTo(el,{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:1.25,ease:'power3.inOut',scrollTrigger:{trigger:el,start:'top 88%',once:true}});gsap.fromTo(el.querySelector('img'),{scale:1.2},{scale:1,duration:1.5,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}})},{scope:ref});return <div ref={ref} className={`image-reveal ${className}`}><img src={src} alt={alt} loading="lazy"/></div>}

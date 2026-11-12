@@ -6,12 +6,15 @@
     <meta name="theme-color" content="#21161A" />
     <meta name="description" content="Zeneth — Strategic financial solutions tailored to improve resilience, unlock new opportunities and support long-term success." />
     <title>Zeneth — Guiding wealth with confidence</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      (() => {
+        const target = new URL('./app/app.html', window.location.href);
+        target.search = window.location.search;
+        target.hash = window.location.hash ? window.location.hash.slice(1) : '/';
+        window.location.replace(target.href);
+      })();
+    </script>
+    <noscript><meta http-equiv="refresh" content="0; url=./app/app.html#/" /></noscript>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <body><p>Loading Zeneth… <a href="./app/app.html#/">Continue</a>.</p></body>
 </html>
