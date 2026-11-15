@@ -53,4 +53,4 @@ function Layout() {
   </>;
 }
 
-export default function App() { return <BrowserRouter><Layout/></BrowserRouter>; }
+export default function App() { return <BrowserRouter basename={import.meta.env.BASE_URL}><Layout/></BrowserRouter>; }
