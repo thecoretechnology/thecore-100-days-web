@@ -44,6 +44,12 @@ jobs:
           cp -R dist/. .
           rm -rf dist node_modules
 
+      - name: Build Day 59 Creatiq
+        working-directory: phase-3-complete-websites/site/day-059-creatiq
+        run: |
+          npm ci
+          npm run build
+
       - name: Prepare all website projects
         run: |
           mkdir -p _site
