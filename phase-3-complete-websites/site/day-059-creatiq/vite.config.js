@@ -7,7 +7,9 @@ export default defineConfig({
       name: 'direct-file-preview',
       apply: 'build',
       transformIndexHtml(html) {
-        return html.replace('<script type="module" crossorigin', '<script defer');
+        return html
+          .replace('<script type="module" crossorigin', '<script defer')
+          .replace(/ crossorigin(?=[ >])/g, '');
       },
     },
   ],
