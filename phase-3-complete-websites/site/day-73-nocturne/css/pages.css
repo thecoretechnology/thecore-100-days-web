@@ -1,0 +1,45 @@
+
+.editorial-page{padding-top:125px}.page-hero{padding-top:45px;padding-bottom:75px}.page-hero .eyebrow{margin-top:55px}.page-hero h1{font:400 clamp(68px,12vw,160px)/.94 var(--serif);letter-spacing:-.055em;margin:18px 0 25px}.page-intro{font:italic clamp(20px,2.5vw,30px)/1.5 var(--serif);color:#c9b9a8;max-width:720px;margin:0}.page-content{padding-top:20px;padding-bottom:130px}.page-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:25px 0 75px}.page-photo-grid figure{height:440px;margin:0;position:relative;overflow:hidden;background:#211414}.page-photo-grid img,.feature-split>img,.contact-photo{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.78) saturate(.8);transition:transform .8s,filter .8s}.page-photo-grid figure:hover img{transform:scale(1.04);filter:brightness(.95) saturate(.95)}.page-photo-grid figcaption{position:absolute;bottom:20px;left:20px;font-size:9px;letter-spacing:.16em;text-shadow:0 2px 10px #000}.menu-photo-grid{grid-template-columns:repeat(3,1fr)}.menu-photo-grid figure{height:360px}.full-menu-grid{border-top:1px solid var(--line)}.menu-line{display:grid;grid-template-columns:70px 1fr 65px 25px;gap:20px;align-items:center;padding:24px 5px;border-bottom:1px solid var(--line);transition:padding .25s,background .25s}.menu-line:hover{padding-left:15px;background:rgba(255,255,255,.025)}.menu-index,.menu-line i{font-size:10px;color:var(--muted);font-style:normal}.menu-line strong{display:block;font:400 29px var(--serif)}.menu-line small{display:block;color:#a99b8e;font-size:10px;margin-top:7px}.menu-line b{font-size:12px;font-weight:400}.menu-note{font-size:10px;color:var(--muted);line-height:1.8;margin-top:28px}.feature-split{display:grid;grid-template-columns:1fr 1.05fr;gap:8%;align-items:center;margin:20px 0 80px}.feature-split>img{height:570px}.feature-split h2,.manifesto h2{font:400 clamp(48px,6vw,82px)/1.02 var(--serif);letter-spacing:-.04em;margin:20px 0}.feature-split h2 em,.manifesto h2 em{font-weight:400}.feature-split .stats-row{margin-top:55px}.manifesto{padding:90px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}.manifesto h2{font-size:clamp(48px,7vw,95px)}.nights-photo-grid figure{height:360px}.event-list{margin-top:25px}.private-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;border-top:1px solid var(--line);padding-top:35px}.private-benefits>div{padding:12px 10px 0 0}.private-benefits span{color:#b98e7b;font-size:10px}.private-benefits h3{font:400 27px var(--serif);margin:20px 0 8px}.private-benefits p{font-size:11px;line-height:1.9;color:#a99b8e;max-width:280px}.contact-photo{height:260px;margin-top:35px}.contact-layout{padding-top:25px}.contact-details{margin-top:70px}.menu-toggle{cursor:pointer}.mobile-menu{z-index:40}
+@media(max-width:760px){.editorial-page{padding-top:100px}.page-hero{padding-bottom:45px}.page-hero h1{font-size:clamp(58px,15vw,95px)}.page-content{padding-bottom:85px}.page-photo-grid,.menu-photo-grid{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:45px}.page-photo-grid figure,.menu-photo-grid figure,.nights-photo-grid figure{height:250px}.menu-photo-grid figure:last-child{display:none}.feature-split{grid-template-columns:1fr;gap:28px;margin-bottom:55px}.feature-split>img{height:340px;grid-row:1}.feature-split h2{font-size:55px}.menu-line{grid-template-columns:38px 1fr 45px 15px;gap:10px;padding:20px 0}.menu-line strong{font-size:23px}.menu-line small{font-size:8px;line-height:1.6}.private-benefits{grid-template-columns:1fr;gap:18px}.private-benefits>div{border-bottom:1px solid var(--line);padding-bottom:18px}.contact-photo{height:220px}.contact-layout{padding-top:0}.stats-row{margin-top:35px}}
+
+.private-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.68) saturate(.8)}.private-image span{position:relative;z-index:1}.drink-image img{position:absolute;inset:0}.detail-image img{width:100%;height:100%;object-fit:cover}
+
+/* Expanded dining, story and gallery pages */
+.desktop-nav{gap:clamp(10px,1.15vw,20px)}
+.desktop-nav a{font-size:8px;letter-spacing:.13em}
+.food-page .page-hero h1{max-width:900px}
+.food-jump{display:flex;flex-wrap:wrap;gap:28px;margin-top:55px;padding-top:18px;border-top:1px solid var(--line);max-width:720px}
+.food-jump a,.text-link{font-size:9px;letter-spacing:.14em;color:#d0b8a7;text-decoration:none}
+.food-category{padding:50px 0 70px;border-top:1px solid var(--line);scroll-margin-top:100px}
+.food-category__heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}
+.food-category__heading h2,.food-cta h2,.gallery-end h2{font:400 clamp(35px,5vw,65px)/1.05 var(--serif);letter-spacing:-.04em;margin:14px 0 0}
+.food-category__heading h2 em,.food-cta h2 em,.gallery-end h2 em{font-weight:400}
+.food-category__count{font-size:9px;letter-spacing:.15em;color:var(--muted);padding-bottom:8px}
+.food-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 15px}
+.food-card__image{height:250px;position:relative;overflow:hidden;background:#211414}
+.food-card__image img{width:100%;height:100%;display:block;object-fit:cover;filter:brightness(.78) saturate(.78);transition:transform .8s,filter .8s}
+.food-card:hover .food-card__image img{transform:scale(1.06);filter:brightness(.98) saturate(.95)}
+.food-card__image>span{position:absolute;left:12px;top:12px;font-size:9px;letter-spacing:.1em;background:rgba(10,7,7,.65);padding:7px 9px}
+.food-card__meta{display:flex;justify-content:space-between;gap:10px;padding:14px 1px 0}
+.food-card__meta h3{font:400 20px/1.2 var(--serif);margin:0}
+.food-card__meta p{font-size:9px;line-height:1.7;color:#a99b8e;margin:7px 0 0;max-width:210px}
+.food-card__meta b{font-size:11px;font-weight:400;white-space:nowrap}
+.food-cta,.gallery-end{text-align:center;padding:95px 15px 25px;border-top:1px solid var(--line);margin-top:35px}
+.food-cta .eyebrow,.gallery-end .eyebrow{display:block}
+.food-cta h2,.gallery-end h2{margin:18px 0 28px;font-size:clamp(48px,7vw,88px)}
+.food-cta .text-link{display:block;margin-top:24px}
+.story-values{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:80px;border-top:1px solid var(--line);padding-top:30px}
+.story-values article>span{font-size:9px;letter-spacing:.15em;color:#b98e7b}
+.story-values h3{font:400 27px var(--serif);margin:24px 0 8px}
+.story-values p{font-size:11px;line-height:1.9;color:#a99b8e;max-width:260px}
+.nocturne-gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.gallery-tile{margin:0;position:relative;overflow:hidden;background:#211414;grid-column:span 6;height:420px}
+.gallery-tile.tall{grid-column:span 5;height:560px}
+.gallery-tile.wide{grid-column:span 7}
+.gallery-tile img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.75) saturate(.8);transition:transform .9s,filter .9s}
+.gallery-tile:hover img{transform:scale(1.045);filter:brightness(.98) saturate(.95)}
+.gallery-tile figcaption{position:absolute;bottom:0;left:0;right:0;padding:35px 20px 18px;background:linear-gradient(transparent,rgba(0,0,0,.65));display:flex;justify-content:space-between;align-items:end;gap:10px}
+.gallery-tile figcaption span{font:400 22px var(--serif)}
+.gallery-tile figcaption i{font-style:normal;font-size:8px;letter-spacing:.13em;color:#d2c1b2}
+@media(max-width:900px){.food-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.desktop-nav{gap:9px}.desktop-nav a{font-size:7px}}
+@media(max-width:760px){.food-category{padding:35px 0 45px}.food-category__heading{align-items:start}.food-category__heading h2{font-size:38px}.food-grid{gap:22px 10px}.food-card__image{height:190px}.food-card__meta h3{font-size:17px}.food-card__meta p{font-size:8px}.food-card__meta b{font-size:10px}.food-jump{gap:15px;margin-top:35px}.story-values{grid-template-columns:1fr;gap:18px;margin-top:50px}.story-values article{border-bottom:1px solid var(--line);padding-bottom:18px}.nocturne-gallery{display:block}.gallery-tile,.gallery-tile.tall,.gallery-tile.wide{height:320px;margin-bottom:12px}.gallery-tile figcaption span{font-size:19px}.gallery-tile figcaption i{font-size:7px}}

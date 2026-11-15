@@ -1,0 +1,12 @@
+{
+  "name": "day-73-nocturne",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Expanded multi-page NOCTURNE dining, cocktail bar and nightlife website",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "python3 -m http.server 8000",
+    "test:deploy": "node scripts/test-deploy.mjs"
+  }
+}
