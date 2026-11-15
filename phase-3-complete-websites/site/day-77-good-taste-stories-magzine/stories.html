@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f0ea">
+  <meta name="description" content="Everything Good Taste has written about what to eat, what to wear and where to go.">
+  <title>Stories | Good Taste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://framerusercontent.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="index.html" aria-label="Good Taste home">Good Taste</a>
+
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a class="nav-link is-active" href="https://good-taste.framer.website/stories" aria-current="page">Stories</a>
+        <a class="nav-link" href="https://good-taste.framer.website/issues">Issues</a>
+        <a class="nav-link" href="https://good-taste.framer.website/about">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch theme">
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 15.1A8.3 8.3 0 0 1 8.9 3.6 8.4 8.4 0 1 0 20.4 15.1Z"/></svg>
+        </button>
+        <a class="subscribe-button" href="https://good-taste.framer.website/issues">Subscribe</a>
+      </div>
+
+      <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="https://good-taste.framer.website/stories" aria-current="page">Stories</a>
+      <a href="https://good-taste.framer.website/issues">Issues</a>
+      <a href="https://good-taste.framer.website/about">About</a>
+      <a href="https://good-taste.framer.website/issues">Subscribe</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page-shell">
+    <section class="archive-intro" aria-labelledby="page-title">
+      <div class="eyebrow-row">
+        <span class="mono-label">THE ARCHIVE</span>
+        <span class="mono-label sort-label">NEWEST FIRST</span>
+      </div>
+      <div class="intro-heading-row">
+        <h1 id="page-title">Stories</h1>
+        <p class="intro-deck">Everything we have written about what<br class="desktop-break"> to eat, what to wear and where to go.</p>
+      </div>
+    </section>
+
+    <section class="stories-section" aria-labelledby="all-stories-title">
+      <div class="section-heading-row">
+        <h2 id="all-stories-title">All stories</h2>
+        <span class="mono-label helper-label">SEARCH OR PICK A SECTION</span>
+      </div>
+
+      <form class="filter-bar" role="search" autocomplete="off">
+        <label class="search-control" for="story-search">
+          <span class="mono-label">SEARCH</span>
+          <input id="story-search" type="search" placeholder="Search stories, e.g. lunch, wine, tailor" aria-label="Search stories">
+        </label>
+        <label class="section-control" for="category-filter">
+          <span class="mono-label">SECTION</span>
+          <span class="select-wrap">
+            <select id="category-filter" aria-label="Filter stories by section">
+              <option value="all">All</option>
+              <option value="food">Food</option>
+              <option value="fashion">Fashion</option>
+              <option value="restaurants">Restaurants</option>
+            </select>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg>
+          </span>
+        </label>
+      </form>
+
+      <div class="story-grid" id="story-grid" aria-live="polite">
+        <article class="story-card" data-category="food" data-search="the long lunch is back why the best tables in town now open at one and close somewhere near five food pasta lunch">
+          <div class="card-meta"><span class="mono-label">FOOD</span><span class="page-number">p.012</span></div>
+          <a class="card-link" href="https://good-taste.framer.website/stories/the-long-lunch-is-back" aria-label="Read The Long Lunch Is Back">
+            <div class="image-frame"><img src="https://framerusercontent.com/images/bQRmoOL4VT8PRcqOji3NviK4ZC0.jpg?height=2133&width=1600" data-fallback="assets/images/story-long-lunch.jpg" alt="Hands garnishing plates of spaghetti with clams on a wooden table, seen from above" fetchpriority="high"></div>
+            <div class="card-copy"><h3>The Long Lunch Is Back</h3><p>Why the best tables in town now open at one and close somewhere near five.</p><span class="read-time">7 MIN READ</span></div>
+          </a>
+        </article>
+
+        <article class="story-card" data-category="fashion" data-search="after dark in black black sharp and easy to wear from the first coffee to the very last bar fashion style">
+          <div class="card-meta"><span class="mono-label">FASHION</span><span class="page-number">p.024</span></div>
+          <a class="card-link" href="https://good-taste.framer.website/stories/after-dark-in-black" aria-label="Read After Dark, In Black">
+            <div class="image-frame"><img src="https://framerusercontent.com/images/Nvf7Rvkj3yc8HN2NNE1mbywCsY.png?height=1280&width=1024" data-fallback="assets/images/story-after-dark.jpg" alt="A woman dressed in black crouching against a pale wall on a Paris street" loading="lazy"></div>
+            <div class="card-copy"><h3>After Dark, In Black</h3><p>Black, sharp and easy to wear from the first coffee to the very last bar.</p><span class="read-time">5 MIN READ</span></div>
+          </a>
+        </article>
+
+        <article class="story-card" data-category="restaurants" data-search="dinner below the waterline inside the restaurant where the view is the sea seen from underneath restaurants dining">
+          <div class="card-meta"><span class="mono-label">RESTAURANTS</span><span class="page-number">p.036</span></div>
+          <a class="card-link" href="https://good-taste.framer.website/stories/dinner-below-the-waterline" aria-label="Read Dinner Below the Waterline">
+            <div class="image-frame"><img src="https://framerusercontent.com/images/17JHCqjCmryOrm9AytOJyJgBK9w.jpeg?height=2400&width=1800" data-fallback="assets/images/story-waterline.jpg" alt="Cream restaurant banquettes beneath curved windows looking out under the sea" loading="lazy"></div>
+            <div class="card-copy"><h3>Dinner Below the Waterline</h3><p>Inside the restaurant where the view is the sea, seen from underneath.</p><span class="read-time">8 MIN READ</span></div>
+          </a>
+        </article>
+
+        <article class="story-card" data-category="fashion" data-search="the tailor will see you now made to measure quietly becoming the smartest thing in the wardrobe fashion tailoring">
+          <div class="card-meta"><span class="mono-label">FASHION</span><span class="page-number">p.042</span></div>
+          <a class="card-link" href="https://good-taste.framer.website/stories/the-tailor-will-see-you-now" aria-label="Read The Tailor Will See You Now">
+            <div class="image-frame"><img src="https://framerusercontent.com/images/QaMtNsdU9do9QyoPtZVAixCmE.png?height=2399&width=1803" alt="A tailored brown jacket with a patterned scarf and pocket square" loading="lazy"></div>
+            <div class="card-copy"><h3>The Tailor Will See You Now</h3><p>Made to measure is quietly becoming the smartest thing in the wardrobe.</p><span class="read-time">6 MIN READ</span></div>
+          </a>
+        </article>
+
+        <article class="story-card" data-category="food" data-search="a market morning fresh peas six good stalls shopping well before nine food market">
+          <div class="card-meta"><span class="mono-label">FOOD</span><span class="page-number">p.054</span></div>
+          <a class="card-link" href="https://good-taste.framer.website/stories/a-market-morning" aria-label="Read A Market Morning">
+            <div class="image-frame"><img src="https://framerusercontent.com/images/Upuc541vMgbA4ADaQMYfocX6mA.png?height=2399&width=1347" alt="A close-up of fresh green pea pods" loading="lazy"></div>
+            <div class="card-copy"><h3>A Market Morning</h3><p>Fresh peas, six good stalls and the case for shopping well before nine.</p><span class="read-time">4 MIN READ</span></div>
+          </a>
+        </article>
+
+        <article class="story-card" data-category="restaurants" data-search="natural wine no lecture where to drink something interesting without a twenty minute introduction restaurants wine bar">
+          <div class="card-meta"><span class="mono-label">RESTAURANTS</span><span class="page-number">p.061</span></div>
+          <a class="card-link" href="https://good-taste.framer.website/stories/natural-wine-no-lecture" aria-label="Read Natural Wine, No Lecture">
+            <div class="image-frame"><img src="https://framerusercontent.com/images/rrB2byVjZEVrqUOW96Q6fRFVIo.jpeg?height=2400&width=1920" alt="A warmly lit neighbourhood wine bar with a long wooden counter" loading="lazy"></div>
+            <div class="card-copy"><h3>Natural Wine, No Lecture</h3><p>Where to drink something interesting without a twenty-minute introduction.</p><span class="read-time">5 MIN READ</span></div>
+          </a>
+        </article>
+      </div>
+
+      <p class="empty-state" id="empty-state" hidden>No stories found. Try another search or section.</p>
+      <div class="load-more-wrap">
+        <button class="load-more-button" id="load-more" type="button">Load More <span aria-hidden="true">↓</span></button>
+        <p class="load-more-message" id="load-more-message" role="status" aria-live="polite" hidden>You're up to date with all six stories.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="footer-wordmark" href="index.html">Good Taste</a>
+          <p>A quarterly magazine about what we eat, what we wear and where we go. In print four times a year, online every week.</p>
+        </div>
+        <div class="footer-column"><span class="mono-label">READ</span><a href="https://good-taste.framer.website/stories">Stories</a><a href="https://good-taste.framer.website/issues">Issues</a></div>
+        <div class="footer-column"><span class="mono-label">MAGAZINE</span><a href="https://good-taste.framer.website/about">About</a><a href="https://good-taste.framer.website/contact">Contact</a></div>
+        <div class="footer-column"><span class="mono-label">FOLLOW</span><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok ↗</a><a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest ↗</a></div>
+      </div>
+      <div class="footer-bottom"><span class="footer-copyright">© 2026 GOOD TASTE MAGAZINE. ALL RIGHTS RESERVED.</span><a class="latest-issue" href="https://good-taste.framer.website/issues">LATEST: ISSUE 04, THE APPETITE ISSUE <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </footer>
+</body>
+</html>
