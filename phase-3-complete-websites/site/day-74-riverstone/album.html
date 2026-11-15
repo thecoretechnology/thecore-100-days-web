@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#30231e"><meta name="description" content="RIVERSTONE — Golden Hour Drifter. An album for the miles that make us.">
+  <title>Golden Hour Drifter — RIVERSTONE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&family=Rye&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/animations.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="js/main.js"></script><script defer src="js/animations.js"></script><script defer src="js/album.js"></script>
+</head>
+<body class="album-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header album-header">
+  <a class="brand" href="index.html" aria-label="RIVERSTONE home"><img src="assets/icons/hat.svg" alt=""><span>RIVER<br>STONE</span></a>
+  <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+  <nav class="nav" id="primary-navigation" aria-label="Main navigation"><a href="tour.html" data-page="tour">TOUR</a><a href="contact.html" data-page="contact">CONTACT</a></nav>
+  <a class="login" href="contact.html">BOOKING <span>✦</span></a>
+</header>
+<main id="main-content">
+  <section class="album-masthead" id="top">
+    <div class="album-masthead-image" data-parallax><img src="assets/images/riverstone-hero.webp" width="832" height="941" decoding="async" fetchpriority="high" alt="Chestnut horse on a vinyl record in a desert at sunset"><div></div></div>
+    <div class="album-masthead-top"><span>RIVERSTONE · THE DEBUT RECORD</span><span>12 TRACKS / 2 SIDES / 1 LONG RIDE</span></div>
+    <div class="album-masthead-content"><img class="album-hat" src="assets/icons/hat.svg" alt="Vintage cowboy hat illustration"><p class="rs-eyebrow">A COLLECTION OF STORIES FROM THE OPEN ROAD</p><h1 class="album-wordmark">GOLDEN HOUR<br><em>DRIFTER</em></h1><p class="album-masthead-line">SOMEWHERE BETWEEN THE DUST AND THE DUSK.</p><a class="album-outline-link" href="#the-record">EXPLORE THE RECORD <span>↓</span></a></div>
+    <div class="album-masthead-bottom"><span>01 — THE LONG WAY HOME</span><span>PUT THE NEEDLE DOWN</span></div>
+  </section>
+
+  <section class="album-introduction" id="the-story">
+    <div class="album-intro-art reveal"><div class="album-cover"><img src="assets/images/riverstone-hero.webp" width="832" height="941" loading="lazy" decoding="async" alt="Golden Hour Drifter album cover artwork"><div class="album-cover-grain"></div><div class="album-cover-type"><span>RIVERSTONE PRESENTS</span><strong>GOLDEN<br>HOUR<br>DRIFTER</strong><small>AN ALBUM FOR THE OPEN ROAD · 2026</small></div><img class="album-cover-hat" src="assets/icons/hat.svg" alt=""></div><span class="album-art-caption">SIDE A / SIDE B · 45 RPM · STEREO</span></div>
+    <div class="album-intro-copy reveal"><p class="rs-eyebrow">THE DEBUT ALBUM · 2026</p><h2>FOR THE MILES<br>THAT <em>MAKE US.</em></h2><p>Golden Hour Drifter is a collection of songs about leaving, returning, and everything that happens on the road in between. Warm guitars, honest words, and melodies that stay with you long after the engine cools.</p><p>These songs were made for the last light on the highway, the long way around, and the people who feel like home no matter how far you roam.</p><a class="album-text-link" href="#the-record">PUT THE NEEDLE DOWN <span>↘</span></a></div>
+    <div class="album-intro-side">THE HEARTLAND NEVER LEFT ME <span>✳</span></div>
+  </section>
+
+  <section class="album-record-section" id="the-record">
+    <div class="album-record-heading reveal"><p class="rs-eyebrow">12 SONGS · TWO SIDES</p><h2>THE <em>RECORD.</em></h2><p>Turn it over. There's more to the story.</p></div>
+    <div class="album-record-layout">
+      <div class="album-vinyl-wrap reveal" aria-label="Spinning RIVERSTONE vinyl record"><div class="album-vinyl-shadow"></div><div class="album-vinyl"><div class="album-vinyl-rings"></div><div class="album-vinyl-center"><span>RIVERSTONE</span><strong>GOLDEN HOUR<br>DRIFTER</strong><small>STEREO · 45 RPM</small><i></i></div></div><div class="album-vinyl-note">A SIDE / B SIDE<br>ANALOG HEART · DIGITAL SOUL</div></div>
+      <div class="album-track-area reveal"><p class="rs-eyebrow">THE TRACKLIST</p><div class="album-track-tabs" role="tablist" aria-label="Choose album side"><button type="button" class="is-active" id="album-side-a-tab" role="tab" aria-selected="true" aria-controls="album-side-a" data-side="a">SIDE A</button><button type="button" id="album-side-b-tab" role="tab" aria-selected="false" aria-controls="album-side-b" data-side="b">SIDE B</button></div>
+        <div class="album-track-list" id="album-side-a" role="tabpanel" aria-labelledby="album-side-a-tab"><div class="album-track-row"><span>01</span><strong>Golden Hour Drifter</strong><time>3:42</time></div><div class="album-track-row"><span>02</span><strong>Dust on the Dashboard</strong><time>4:08</time></div><div class="album-track-row"><span>03</span><strong>County Line</strong><time>3:31</time></div><div class="album-track-row"><span>04</span><strong>The Long Way Home</strong><time>4:16</time></div><div class="album-track-row"><span>05</span><strong>Wildflower Weather</strong><time>3:55</time></div></div>
+        <div class="album-track-list" id="album-side-b" role="tabpanel" aria-labelledby="album-side-b-tab" hidden><div class="album-track-row"><span>06</span><strong>Motel Bible</strong><time>3:48</time></div><div class="album-track-row"><span>07</span><strong>Ghosts of Amarillo</strong><time>4:22</time></div><div class="album-track-row"><span>08</span><strong>Where the River Bends</strong><time>3:37</time></div><div class="album-track-row"><span>09</span><strong>Slow Burn Summer</strong><time>4:02</time></div><div class="album-track-row"><span>10</span><strong>Last Light on the Plains</strong><time>4:41</time></div></div>
+        <div class="album-list-foot"><span>GOLDEN HOUR DRIFTER</span><span>2026 · RIVERSTONE RECORDS</span></div>
+        <div class="album-stream-actions"><a href="https://open.spotify.com/search/RIVERSTONE%20Golden%20Hour%20Driftersearch/RIVERSTONE%20Golden%20Hour%20Drifter" target="_blank" rel="noopener noreferrer">LISTEN ON SPOTIFY <span>↗</span></a><a href="https://music.apple.com/us/search?term=RIVERSTONE%20Golden%20Hour%20Drifterus/search?term=RIVERSTONE%20Golden%20Hour%20Drifter" target="_blank" rel="noopener noreferrer">APPLE MUSIC <span>↗</span></a></div>
+      </div>
+    </div>
+    <div class="album-record-footer"><span>PRESS PLAY. TAKE THE LONG WAY.</span><span>✳</span><span>RECORDED WITH THE WINDOWS DOWN</span></div>
+  </section>
+
+  <section class="album-single-feature">
+    <div class="album-single-image reveal"><img src="assets/images/riverstone-artist.webp" width="742" height="941" loading="lazy" decoding="async" alt="RIVERSTONE artist in a cowboy hat beside a spotted horse"><span>THE GOLDEN HOUR SESSIONS · 2026</span></div>
+    <div class="album-single-copy reveal"><img src="assets/icons/hat.svg" alt="" class="album-single-emblem"><p class="rs-eyebrow">THE FIRST SINGLE</p><h2>“GOLDEN HOUR<br><em>DRIFTER.”</em></h2><p>A little dust on the dash. A little fire in the sky. The song for anyone who has ever followed the sunset just to see where it goes.</p><p class="album-single-status">OUT NOW ON ALL PLATFORMS</p><div class="album-single-links"><a href="https://open.spotify.com/search/RIVERSTONE%20Golden%20Hour%20Driftersearch/RIVERSTONE%20Golden%20Hour%20Drifter" target="_blank" rel="noopener noreferrer">SPOTIFY <span>↗</span></a><a href="https://music.apple.com/us/search?term=RIVERSTONE%20Golden%20Hour%20Drifterus/search?term=RIVERSTONE%20Golden%20Hour%20Drifter" target="_blank" rel="noopener noreferrer">APPLE MUSIC <span>↗</span></a></div></div>
+  </section>
+
+  <section class="album-final-promo"><div class="album-promo-ornament">✳</div><p class="rs-eyebrow reveal">THE ROAD GOES ON</p><h2 class="reveal">TAKE THE<br><em>LONG WAY.</em></h2><p class="reveal">The songs sound even better when they're shared. Find a show, bring a friend, and meet us somewhere down the road.</p><a class="album-promo-button reveal" href="tour.html">FIND A SHOW <span>↗</span></a><div class="album-promo-foot"><span>KEEP YOUR WINDOWS DOWN</span><span>RIVERSTONE · EST. 2026</span><span>AND YOUR HEART OPEN</span></div></section>
+</main>
+<footer class="rs-footer"><div class="rs-footer-top"><a class="rs-footer-brand" href="index.html">RIVER<br>STONE<span>®</span></a><p>WHERE THE ROAD FORGETS YOUR NAME,<br>THE HEART ALWAYS REMEMBERS THE WAY HOME.</p><a class="rs-back-top" href="#top">BACK TO TOP ↑</a></div><div class="rs-footer-bottom"><div class="rs-footer-legal"><a href="contact.html">BOOKING &amp; MANAGEMENT</a></div><div class="rs-footer-social"><a href="https://open.spotify.com/search/RIVERSTONE%20Golden%20Hour%20Drifter" aria-label="Spotify">◉</a><a href="https://music.apple.com/us/search?term=RIVERSTONE%20Golden%20Hour%20Drifter" aria-label="Apple Music">♫</a><a href="https://music.youtube.com/search?q=RIVERSTONE%20Golden%20Hour%20Drifter" aria-label="YouTube Music">▶</a></div><small>© 2026 RIVERSTONE. ALL ROADS RESERVED.</small></div></footer>
+</body></html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3c6c5">
+  <meta name="description" content="RIVERSTONE — stories carved from the heartland. Listen to the new album, Golden Hour Drifter, and follow the road.">
+  <title>RIVERSTONE — Stories Carved from the Heartland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&family=Rye&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/animations.js"></script>
+</head>
+<body class="home-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header home-header">
+    <a class="brand" href="index.html" aria-label="Riverstone home"><img src="assets/icons/hat.svg" alt=""><span>RIVER<br>STONE</span></a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+    <nav class="nav" id="primary-navigation" aria-label="Main navigation"><a href="album.html" data-page="album">ALBUM</a><a href="tour.html" data-page="tour">TOUR</a><a href="contact.html" data-page="contact">CONTACT</a></nav>
+    <a class="login" href="contact.html">BOOKING <span>✦</span></a>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="rs-hero" id="top" aria-label="Riverstone artist introduction">
+      <div class="rs-hero-image" data-parallax>
+        <img src="assets/images/riverstone-hero.webp" width="832" height="941" decoding="async" fetchpriority="high" alt="A chestnut horse standing on a vinyl record in a desert at sunset">
+        <div class="rs-hero-shade"></div>
+      </div>
+      <div class="rs-hero-topline"><span>INDEPENDENT COUNTRY MUSIC</span><span>EST. IN THE HEARTLAND · 2026</span></div>
+      <div class="rs-hero-center">
+        <img class="rs-hero-hat" src="assets/icons/hat.svg" alt="Vintage cowboy hat illustration">
+        <p class="rs-hero-kicker hero-reveal">THE NEW ALBUM FROM RIVERSTONE</p>
+        <h1 class="rs-wordmark hero-reveal">RIVERSTONE</h1>
+        <p class="rs-hero-line hero-reveal">WHERE THE ROAD FORGETS YOUR NAME,<br>THE HEART ALWAYS REMEMBERS THE WAY HOME.</p>
+        <a class="rs-hero-cta hero-reveal" href="#the-record">STREAM THE ALBUM <span>↘</span></a>
+        <div class="rs-stream-links hero-reveal" aria-label="Streaming platforms">
+          <a href="https://open.spotify.com/search/RIVERSTONE%20Golden%20Hour%20Drifter" target="_blank" rel="noreferrer" aria-label="Spotify">◉</a>
+          <a href="https://music.apple.com/us/search?term=RIVERSTONE%20Golden%20Hour%20Drifter" target="_blank" rel="noreferrer" aria-label="Apple Music">♫</a>
+          <a href="https://music.youtube.com/search?q=RIVERSTONE%20Golden%20Hour%20Drifter" target="_blank" rel="noreferrer" aria-label="YouTube Music">▶</a>
+        </div>
+      </div>
+      <div class="rs-hero-bottom"><span>01 — THE OPEN ROAD</span><span>SCROLL TO EXPLORE ↓</span><span>35° 41' N · 105° 56' W</span></div>
+      <span class="hero-stamp" aria-hidden="true">★<br>R</span>
+    </section>
+
+    <!-- ARTIST INTRO -->
+    <section class="rs-intro" id="the-story">
+      <div class="rs-intro-mark reveal"><img src="assets/icons/hat.svg" alt=""><span>RIVERSTONE<br>COUNTRY · SOUL · STORIES</span></div>
+      <div class="rs-intro-copy reveal">
+        <p class="rs-eyebrow">A LITTLE DUST. A LOT OF HEART.</p>
+        <h2>SONGS FROM<br>THE <em>LONG WAY</em><br>HOME.</h2>
+        <p class="rs-intro-body">Somewhere between the last light of the day and the first mile of the morning, there are stories worth singing. RIVERSTONE is country music with its boots in the dirt — honest melodies, open-road memories and a little bit of wild in every note.</p>
+        <a class="rs-text-link" href="contact.html">GET TO KNOW THE ARTIST <span>↗</span></a>
+      </div>
+      <div class="rs-intro-aside reveal"><span class="sideways">MADE FOR THE MILES BETWEEN HERE & HOME</span><div class="rs-starburst">✳</div><p>THE HEARTLAND<br>NEVER LEFT ME.</p></div>
+    </section>
+
+    <!-- VINYL ALBUM / TRACKLIST -->
+    <section class="rs-record" id="the-record">
+      <div class="rs-record-heading reveal"><p class="rs-eyebrow">THE DEBUT ALBUM · 2026</p><h2>RIVERSTONE<br><span>ROADS</span></h2><p>12 songs. Two sides. One long ride.</p></div>
+      <div class="rs-vinyl-stage">
+        <div class="rs-vinyl-shadow"></div>
+        <div class="rs-vinyl" aria-label="Decorative spinning vinyl record"><div class="rs-vinyl-grooves"></div><div class="rs-vinyl-label"><span>RIVERSTONE</span><strong>ROADS</strong><small>SIDE A · SIDE B<br>45 RPM · STEREO</small><i></i></div></div>
+        <div class="rs-vinyl-spark">✳</div>
+      </div>
+      <div class="rs-track-panel reveal">
+        <p class="rs-eyebrow">THE TRACKLIST</p>
+        <div class="rs-track-tabs" role="tablist" aria-label="Album sides">
+          <button class="rs-track-tab is-active" id="side-a-tab" type="button" role="tab" aria-selected="true" aria-controls="side-a">SIDE A</button>
+          <button class="rs-track-tab" id="side-b-tab" type="button" role="tab" aria-selected="false" aria-controls="side-b">SIDE B</button>
+        </div>
+        <div class="rs-track-list" id="side-a" role="tabpanel" aria-labelledby="side-a-tab">
+          <div class="rs-track-row"><span>01</span><strong>Riverstone Roads</strong><time>3:42</time></div>
+          <div class="rs-track-row"><span>02</span><strong>Dust on My Boots</strong><time>2:58</time></div>
+          <div class="rs-track-row"><span>03</span><strong>Midnight Pickup</strong><time>3:15</time></div>
+          <div class="rs-track-row"><span>04</span><strong>Whiskey &amp; Willow Trees</strong><time>4:06</time></div>
+          <div class="rs-track-row"><span>05</span><strong>Letters Never Sent</strong><time>3:27</time></div>
+          <div class="rs-track-row"><span>06</span><strong>Backseat of a Ford ’95</strong><time>3:51</time></div>
+        </div>
+        <div class="rs-track-list" id="side-b" role="tabpanel" aria-labelledby="side-b-tab" hidden>
+          <div class="rs-track-row"><span>07</span><strong>Tennessee Line</strong><time>2:49</time></div>
+          <div class="rs-track-row"><span>08</span><strong>Slow Burn Sunrise</strong><time>4:12</time></div>
+          <div class="rs-track-row"><span>09</span><strong>Gravel &amp; Gold</strong><time>3:34</time></div>
+          <div class="rs-track-row"><span>10</span><strong>One Last Rodeo</strong><time>3:59</time></div>
+          <div class="rs-track-row"><span>11</span><strong>Radio Static Love</strong><time>2:57</time></div>
+          <div class="rs-track-row"><span>12</span><strong>Home Ain’t a Place</strong><time>4:21</time></div>
+        </div>
+        <a class="rs-dark-button" href="album.html">EXPLORE THE RECORD <span>↗</span></a>
+      </div>
+      <div class="rs-record-foot"><span>ANALOG HEART · DIGITAL SOUL</span><span>PRESS PLAY. TAKE THE LONG WAY.</span></div>
+    </section>
+
+    <!-- FEATURED SINGLE -->
+    <section class="rs-single" id="single">
+      <div class="rs-single-photo reveal"><img src="assets/images/riverstone-artist.webp" width="742" height="941" loading="lazy" decoding="async" alt="Country singer in a weathered cowboy hat beside a spotted horse at golden hour"><span class="photo-caption">CANYON COUNTRY · THE GOLDEN HOUR SESSIONS</span></div>
+      <div class="rs-single-copy reveal">
+        <img class="rs-skull" src="assets/icons/hat.svg" alt="">
+        <p class="rs-eyebrow">HEAR THE FIRST SINGLE</p>
+        <h2>“GOLDEN<br>HOUR<br><em>DRIFTER</em>”</h2>
+        <p class="rs-single-description">For the ones who chase the sunset, take the back roads and never quite learned how to stay put.</p>
+        <p class="rs-out-now">OUT NOW ON ALL PLATFORMS</p>
+        <div class="rs-single-buttons"><a href="https://open.spotify.com/search/RIVERSTONE%20Golden%20Hour%20Drifter" target="_blank" rel="noreferrer">LISTEN ON SPOTIFY <span>↗</span></a><a href="https://music.apple.com/us/search?term=RIVERSTONE%20Golden%20Hour%20Drifter" target="_blank" rel="noreferrer">APPLE MUSIC <span>↗</span></a></div>
+      </div>
+    </section>
+
+    <!-- DUSTY PINK PROMO -->
+    <section class="rs-promo">
+      <div class="rs-promo-ornament" aria-hidden="true">✳</div>
+      <p class="rs-eyebrow reveal">THE ROAD ISN'T OVER YET</p>
+      <h2 class="reveal">MEET ME<br><em>OUT THERE.</em></h2>
+      <p class="rs-promo-copy reveal">New songs, live shows and stories from the miles in between. Find your way into the RIVERSTONE circle.</p>
+      <a class="rs-promo-button reveal" href="tour.html">FOLLOW THE TOUR <span>↗</span></a>
+      <div class="rs-promo-bottom"><span>KEEP YOUR WINDOWS DOWN</span><span>RIVERSTONE · EST. 2026</span><span>AND YOUR HEART OPEN</span></div>
+    </section>
+  </main>
+
+  <footer class="rs-footer">
+    <div class="rs-footer-top"><a class="rs-footer-brand" href="index.html">RIVER<br>STONE<span>®</span></a><p>WHERE THE ROAD FORGETS YOUR NAME,<br>THE HEART ALWAYS REMEMBERS THE WAY HOME.</p><a class="rs-back-top" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">BACK TO TOP ↑</a></div>
+    <div class="rs-footer-bottom"><div class="rs-footer-legal"><a href="contact.html">BOOKING &amp; MANAGEMENT</a></div><div class="rs-footer-social"><a href="https://open.spotify.com/search/RIVERSTONE%20Golden%20Hour%20Drifter" aria-label="Spotify">◉</a><a href="https://music.apple.com/us/search?term=RIVERSTONE%20Golden%20Hour%20Drifter" aria-label="Apple Music">♫</a><a href="https://music.youtube.com/search?q=RIVERSTONE%20Golden%20Hour%20Drifter" aria-label="YouTube Music">▶</a></div><small>© 2026 RIVERSTONE. ALL ROADS RESERVED.</small></div>
+  </footer>
+</body>
+</html>
