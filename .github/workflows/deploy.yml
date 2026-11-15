@@ -55,6 +55,12 @@ jobs:
             --exclude='dist' \
             ./ _site/
 
+          # Day 59 is a Vite project. Publish its compiled files at the
+          # project's clean folder URL while keeping other dist folders excluded.
+          rsync -a \
+            phase-3-complete-websites/site/day-059-creatiq/dist/ \
+            _site/phase-3-complete-websites/site/day-059-creatiq/
+
       - name: Upload website files
         uses: actions/upload-pages-artifact@v4
         with:
