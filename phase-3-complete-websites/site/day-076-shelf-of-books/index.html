@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Shelf of Books — a tactile, interactive reading collection arranged by subject."
+    />
+    <title>Shelf of Books — Reading Collection</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#bookshelf">Skip to the bookshelf</a>
+
+    <main class="library" id="library">
+      <header class="site-header">
+        <button class="wordmark" type="button" data-filter-reset>
+          Shelf of Books
+        </button>
+
+        <div class="collection-nav">
+          <button
+            class="collection-toggle"
+            type="button"
+            aria-label="Browse book collections"
+            aria-controls="collection-menu"
+            aria-expanded="false"
+          >
+            <svg aria-hidden="true" viewBox="0 0 32 32">
+              <path d="M5.4 5.1h8.1v22H5.4zM18.6 4.1l7.3-1.2 3.5 22.8-7.3 1.2z" />
+              <path d="M8.2 8.4h2.5M8.2 23.8h2.5M21.2 7.5l2.5-.4M23.7 22.8l2.5-.4" />
+            </svg>
+          </button>
+
+          <nav class="collection-menu" id="collection-menu" aria-label="Book collections" hidden>
+            <p class="menu-label">Collections</p>
+            <button class="filter-option is-selected" type="button" data-filter="All">All</button>
+            <button class="filter-option" type="button" data-filter="Visual Arts">Visual Arts</button>
+            <button class="filter-option" type="button" data-filter="Science Fiction">Science Fiction</button>
+            <button class="filter-option" type="button" data-filter="Fiction">Fiction</button>
+            <button class="filter-option" type="button" data-filter="Philosophy">Philosophy</button>
+            <button class="filter-option" type="button" data-filter="Sociology">Sociology</button>
+            <button class="filter-option" type="button" data-filter="Psychology">Psychology</button>
+            <button class="filter-option" type="button" data-filter="Science">Science</button>
+            <button class="filter-option" type="button" data-filter="Theory">Theory</button>
+          </nav>
+        </div>
+      </header>
+
+      <section class="shelf-stage" aria-labelledby="shelf-title">
+        <h1 class="sr-only" id="shelf-title">An interactive shelf of favorite books</h1>
+        <p class="collection-status" aria-live="polite"><span>All</span> collection</p>
+        <div class="bookshelf" id="bookshelf" role="list" aria-label="Books"></div>
+        <div class="shelf-shadow" aria-hidden="true"></div>
+      </section>
+
+      <aside class="book-popover" id="book-popover" aria-live="polite" aria-hidden="true">
+        <div class="mini-cover" aria-hidden="true">
+          <span class="mini-cover-kicker"></span>
+          <strong class="mini-cover-title"></strong>
+          <span class="mini-cover-mark">SB</span>
+        </div>
+        <div class="popover-copy">
+          <p class="popover-category"></p>
+          <h2 class="popover-title"></h2>
+          <dl class="book-meta">
+            <div><dt>Author</dt><dd class="popover-author"></dd></div>
+            <div><dt>Published</dt><dd class="popover-year"></dd></div>
+          </dl>
+          <p class="popover-rating"><span>Reader score</span><strong></strong></p>
+          <a class="book-link" href="#" target="_blank" rel="noopener noreferrer">View edition</a>
+        </div>
+      </aside>
+
+      <footer class="site-footer">
+        <p>A personal collection for curious readers.</p>
+        <span class="footer-count"><strong id="visible-count">0</strong> books on the shelf</span>
+      </footer>
+    </main>
+
+    <noscript>This interactive shelf needs JavaScript enabled to arrange the books.</noscript>
+  </body>
+</html>
