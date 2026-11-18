@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="IELTS learning and study illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8e9e2"/><stop offset="1" stop-color="#ead0c8"/></linearGradient>
+    <linearGradient id="book" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8b2635"/><stop offset="1" stop-color="#541824"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="1000" cy="140" r="190" fill="#fff7f2" opacity=".55"/>
+  <path d="M0 650 Q300 560 600 660 T1200 620 V800 H0Z" fill="#d9b8ad" opacity=".45"/>
+  <g transform="translate(310 180)">
+    <rect x="70" y="240" width="520" height="270" rx="24" fill="#fffaf6" stroke="#d9b8ad" stroke-width="8"/>
+    <path d="M105 280h220v190H105z" fill="url(#book)"/><path d="M335 280h220v190H335z" fill="#fff" stroke="#ead8d0" stroke-width="5"/>
+    <path d="M330 280v190" stroke="#cda79a" stroke-width="7"/>
+    <text x="215" y="365" text-anchor="middle" fill="#fff7f2" font-family="Georgia,serif" font-size="42">IELTS</text>
+    <path d="M375 330h145M375 370h120M375 410h132" stroke="#9d7770" stroke-width="10" stroke-linecap="round"/>
+    <path d="M80 525h520" stroke="#8a5b55" stroke-width="18" stroke-linecap="round"/>
+    <path d="M165 190c25-55 90-80 145-55 48 22 70 80 50 130" fill="none" stroke="#8b2635" stroke-width="14" stroke-linecap="round"/>
+    <path d="M500 120l50 50-50 50" fill="none" stroke="#8b2635" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="600" y="735" text-anchor="middle" fill="#64202b" font-family="Arial,sans-serif" font-size="28" letter-spacing="8">LEARN WITH PURPOSE</text>
+</svg>
