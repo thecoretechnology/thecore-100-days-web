@@ -23,11 +23,14 @@ if (!scriptMatch || !styleMatch) throw new Error('Unable to locate the generated
 
 const script = (await readFile(new URL(`assets/${scriptMatch[1]}`, dist), 'utf8'))
   .replace(/\n?\/\/# sourceMappingURL=.*$/m, '');
-const scriptDataUrl = `data:text/javascript;base64,${Buffer.from(script).toString('base64')}`;
+const scriptBase64 = Buffer.from(script).toString('base64');
+const scriptLoader = `(()=>{const bytes=Uint8Array.from(atob('${scriptBase64}'),c=>c.charCodeAt(0));(0,eval)(new TextDecoder().decode(bytes))})()`;
 const style = await readFile(new URL(`assets/${styleMatch[1]}`, dist), 'utf8');
 appHtml = appHtml
-  .replace(scriptMatch[0], `<script type="module" src="${scriptDataUrl}"></script>`)
-  .replace(styleMatch[0], `<style>${style}</style>`);
+  .replace(scriptMatch[0], '')
+  .replace(styleMatch[0], `<style>${style}</style>`)
+  .replace('</body>', `<script>${scriptLoader}</script></body>`)
+  .replace(/[ \t]+\n/g, '\n');
 
 await writeFile(new URL('index.html', project), appHtml);
 for (const route of routes) {
