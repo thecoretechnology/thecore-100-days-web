@@ -50,6 +50,12 @@ jobs:
           npm ci
           npm run build
 
+      - name: Build Day 78 Harvest Hill
+        working-directory: phase-3-complete-websites/site/day-78-harvesthill
+        run: |
+          npm ci
+          npm run build
+
       - name: Prepare all website projects
         run: |
           mkdir -p _site
