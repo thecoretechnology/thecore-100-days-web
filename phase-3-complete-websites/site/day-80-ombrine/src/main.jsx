@@ -72,9 +72,11 @@ function Header({dark,setDark,onSearch,onBag}) {
 
 function Home({openLook}) {
   const canvas = useRef(null)
-  const drag = useRef({active:false,x:0,offset:0,moved:false})
+  const drag = useRef({active:false,x:0,offset:0,moved:false,captured:false,pointerId:null,lastX:0,lastTime:0,velocity:0})
   const targetOffset = useRef(0)
   const currentOffset = useRef(0)
+  const pointerTarget = useRef({fx:0,fy:0,bx:0,by:0})
+  const pointerCurrent = useRef({fx:0,fy:0,bx:0,by:0})
   const animationFrame = useRef(0)
   const [offset,setOffset] = useState(0)
   const [active,setActive] = useState(2)
@@ -102,8 +104,23 @@ function Home({openLook}) {
       const distance = targetOffset.current - currentOffset.current
       currentOffset.current += distance * .11
       if (Math.abs(distance) < .18) currentOffset.current = targetOffset.current
+      const pointer = pointerCurrent.current
+      const target = pointerTarget.current
+      let pointerDistance = 0
+      for (const key of ['fx','fy','bx','by']) {
+        const delta = target[key]-pointer[key]
+        pointer[key] += delta*.12
+        if (Math.abs(delta)<.05) pointer[key]=target[key]
+        pointerDistance = Math.max(pointerDistance,Math.abs(delta))
+      }
+      if (canvas.current) {
+        canvas.current.style.setProperty('--front-parallax-x',`${pointer.fx}px`)
+        canvas.current.style.setProperty('--front-parallax-y',`${pointer.fy}px`)
+        canvas.current.style.setProperty('--back-parallax-x',`${pointer.bx}px`)
+        canvas.current.style.setProperty('--back-parallax-y',`${pointer.by}px`)
+      }
       setOffset(currentOffset.current)
-      if (currentOffset.current !== targetOffset.current) animationFrame.current = requestAnimationFrame(tick)
+      if (currentOffset.current !== targetOffset.current || pointerDistance>=.05) animationFrame.current = requestAnimationFrame(tick)
       else animationFrame.current = 0
     }
     animationFrame.current = requestAnimationFrame(tick)
@@ -117,7 +134,17 @@ function Home({openLook}) {
   const move = x => {
     if(!drag.current.active) return
     const next = drag.current.offset + x-drag.current.x
-    drag.current.moved = drag.current.moved || Math.abs(x-drag.current.x) > 7
+    const distance = Math.abs(x-drag.current.x)
+    if (!drag.current.moved && distance>10) {
+      drag.current.moved=true
+      canvas.current?.setPointerCapture(drag.current.pointerId)
+      drag.current.captured=true
+    }
+    const now=performance.now()
+    const elapsed=Math.max(12,now-drag.current.lastTime)
+    drag.current.velocity=(x-drag.current.lastX)/elapsed
+    drag.current.lastX=x
+    drag.current.lastTime=now
     updateTarget(next)
   }
   const parallax = e => {
@@ -125,19 +152,21 @@ function Home({openLook}) {
     const rect = canvas.current.getBoundingClientRect()
     const x = (e.clientX-rect.left)/rect.width-.5
     const y = (e.clientY-rect.top)/rect.height-.5
-    canvas.current.style.setProperty('--front-parallax-x',`${x*-12}px`)
-    canvas.current.style.setProperty('--front-parallax-y',`${y*-7}px`)
-    canvas.current.style.setProperty('--back-parallax-x',`${x*18}px`)
-    canvas.current.style.setProperty('--back-parallax-y',`${y*10}px`)
+    pointerTarget.current={fx:x*-12,fy:y*-7,bx:x*18,by:y*10}
+    animateToTarget()
   }
-  const down = e => {drag.current={active:true,x:e.clientX,offset:targetOffset.current,moved:false}; canvas.current?.setPointerCapture(e.pointerId)}
-  const up = e => {drag.current.active=false;canvas.current?.releasePointerCapture(e.pointerId)}
+  const down = e => {drag.current={active:true,x:e.clientX,offset:targetOffset.current,moved:false,captured:false,pointerId:e.pointerId,lastX:e.clientX,lastTime:performance.now(),velocity:0}}
+  const up = e => {
+    if (drag.current.moved) updateTarget(targetOffset.current+drag.current.velocity*170)
+    drag.current.active=false
+    if (drag.current.captured && canvas.current?.hasPointerCapture(e.pointerId)) canvas.current.releasePointerCapture(e.pointerId)
+  }
   const wheel = e => updateTarget(targetOffset.current-e.deltaY*.72-e.deltaX*.45)
-  return <main className={'salon '+(entered?'is-entered':'')} ref={canvas} onPointerDown={down} onPointerMove={e=>{move(e.clientX);parallax(e)}} onPointerLeave={()=>{canvas.current?.style.removeProperty('--front-parallax-x');canvas.current?.style.removeProperty('--front-parallax-y');canvas.current?.style.removeProperty('--back-parallax-x');canvas.current?.style.removeProperty('--back-parallax-y')}} onPointerUp={up} onPointerCancel={up} onWheel={wheel}>
+  return <main className={'salon '+(entered?'is-entered':'')} ref={canvas} onPointerDown={down} onPointerMove={e=>{move(e.clientX);parallax(e)}} onPointerLeave={()=>{pointerTarget.current={fx:0,fy:0,bx:0,by:0};animateToTarget()}} onPointerUp={up} onPointerCancel={up} onWheel={wheel}>
     <div className="salon-glow" />
     <h1 className="hero-word">Ombrine</h1>
     <div className="salon-track back" style={{transform:`translate3d(calc(${offset*.45}px + var(--back-parallax-x, 0px)),var(--back-parallax-y, 0px),0)`}}>{display.slice(5).concat(display.slice(0,2)).map((look,i)=><img key={look.code} src={A+look.image} alt="" style={{left:`${i*18+1}%`,'--i':i}} />)}</div>
-    <div className="salon-track front" style={{transform:`translate3d(calc(${offset}px + var(--front-parallax-x, 0px)),var(--front-parallax-y, 0px),0)`}}>{display.slice(0,7).map((look,i)=><button key={look.code} className={active===i?'active':''} style={{left:`${i*19-4}%`,'--i':i}} onMouseEnter={()=>setActive(i)} onClick={()=>{if(!drag.current.moved)openLook(look)}}><img src={A+look.image} alt={look.name}/><span>View</span></button>)}</div>
+    <div className="salon-track front" style={{transform:`translate3d(calc(${offset}px + var(--front-parallax-x, 0px)),var(--front-parallax-y, 0px),0)`}}>{display.slice(0,7).map((look,i)=><button type="button" aria-label={`View ${look.name}`} key={look.code} className={active===i?'active':''} style={{left:`${i*19-4}%`,'--i':i}} onMouseEnter={()=>setActive(i)} onFocus={()=>setActive(i)} onClick={()=>{if(!drag.current.moved)openLook(look)}}><img src={A+look.image} alt={look.name}/><span aria-hidden="true">View</span></button>)}</div>
     <div className="salon-caption"><em>{display[active].name}</em><span>{display[active].code.replace('L','Look ')} · {display[active].price}</span></div>
     <button className="how" onClick={()=>navigate('/looks')}>How to use this salon</button>
     <p className="salon-help">Drag to wander&nbsp; · &nbsp;Click a look to step closer</p>
