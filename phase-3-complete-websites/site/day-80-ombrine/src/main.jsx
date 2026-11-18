@@ -72,22 +72,72 @@ function Header({dark,setDark,onSearch,onBag}) {
 
 function Home({openLook}) {
   const canvas = useRef(null)
-  const drag = useRef({active:false,x:0,offset:0})
+  const drag = useRef({active:false,x:0,offset:0,moved:false})
+  const targetOffset = useRef(0)
+  const currentOffset = useRef(0)
+  const animationFrame = useRef(0)
   const [offset,setOffset] = useState(0)
   const [active,setActive] = useState(2)
+  const [entered,setEntered] = useState(false)
   const display = looks.slice(0,12)
+
+  useEffect(() => {
+    document.body.classList.add('home-route')
+    const entrance = requestAnimationFrame(() => requestAnimationFrame(() => setEntered(true)))
+    const footer = document.querySelector('footer')
+    const observer = new IntersectionObserver(([entry]) => footer?.classList.toggle('in-view', entry.isIntersecting), {threshold:.12})
+    if (footer) observer.observe(footer)
+    return () => {
+      cancelAnimationFrame(entrance)
+      cancelAnimationFrame(animationFrame.current)
+      observer.disconnect()
+      document.body.classList.remove('home-route')
+      footer?.classList.remove('in-view')
+    }
+  }, [])
+
+  const animateToTarget = () => {
+    if (animationFrame.current) return
+    const tick = () => {
+      const distance = targetOffset.current - currentOffset.current
+      currentOffset.current += distance * .11
+      if (Math.abs(distance) < .18) currentOffset.current = targetOffset.current
+      setOffset(currentOffset.current)
+      if (currentOffset.current !== targetOffset.current) animationFrame.current = requestAnimationFrame(tick)
+      else animationFrame.current = 0
+    }
+    animationFrame.current = requestAnimationFrame(tick)
+  }
+
+  const updateTarget = value => {
+    targetOffset.current = Math.max(-720,Math.min(360,value))
+    animateToTarget()
+  }
+
   const move = x => {
     if(!drag.current.active) return
     const next = drag.current.offset + x-drag.current.x
-    setOffset(Math.max(-720,Math.min(360,next)))
+    drag.current.moved = drag.current.moved || Math.abs(x-drag.current.x) > 7
+    updateTarget(next)
   }
-  const down = e => {drag.current={active:true,x:e.clientX,offset}; canvas.current?.setPointerCapture(e.pointerId)}
+  const parallax = e => {
+    if (drag.current.active || !canvas.current) return
+    const rect = canvas.current.getBoundingClientRect()
+    const x = (e.clientX-rect.left)/rect.width-.5
+    const y = (e.clientY-rect.top)/rect.height-.5
+    canvas.current.style.setProperty('--front-parallax-x',`${x*-12}px`)
+    canvas.current.style.setProperty('--front-parallax-y',`${y*-7}px`)
+    canvas.current.style.setProperty('--back-parallax-x',`${x*18}px`)
+    canvas.current.style.setProperty('--back-parallax-y',`${y*10}px`)
+  }
+  const down = e => {drag.current={active:true,x:e.clientX,offset:targetOffset.current,moved:false}; canvas.current?.setPointerCapture(e.pointerId)}
   const up = e => {drag.current.active=false;canvas.current?.releasePointerCapture(e.pointerId)}
-  return <main className="salon" ref={canvas} onPointerDown={down} onPointerMove={e=>move(e.clientX)} onPointerUp={up} onPointerCancel={up}>
+  const wheel = e => updateTarget(targetOffset.current-e.deltaY*.72-e.deltaX*.45)
+  return <main className={'salon '+(entered?'is-entered':'')} ref={canvas} onPointerDown={down} onPointerMove={e=>{move(e.clientX);parallax(e)}} onPointerLeave={()=>{canvas.current?.style.removeProperty('--front-parallax-x');canvas.current?.style.removeProperty('--front-parallax-y');canvas.current?.style.removeProperty('--back-parallax-x');canvas.current?.style.removeProperty('--back-parallax-y')}} onPointerUp={up} onPointerCancel={up} onWheel={wheel}>
     <div className="salon-glow" />
     <h1 className="hero-word">Ombrine</h1>
-    <div className="salon-track back" style={{transform:`translate3d(${offset*.45}px,0,0)`}}>{display.slice(5).concat(display.slice(0,2)).map((look,i)=><img key={look.code} src={A+look.image} alt="" style={{left:`${i*18+1}%`}} />)}</div>
-    <div className="salon-track front" style={{transform:`translate3d(${offset}px,0,0)`}}>{display.slice(0,7).map((look,i)=><button key={look.code} className={active===i?'active':''} style={{left:`${i*19-4}%`}} onMouseEnter={()=>setActive(i)} onClick={()=>openLook(look)}><img src={A+look.image} alt={look.name}/><span>View</span></button>)}</div>
+    <div className="salon-track back" style={{transform:`translate3d(calc(${offset*.45}px + var(--back-parallax-x, 0px)),var(--back-parallax-y, 0px),0)`}}>{display.slice(5).concat(display.slice(0,2)).map((look,i)=><img key={look.code} src={A+look.image} alt="" style={{left:`${i*18+1}%`,'--i':i}} />)}</div>
+    <div className="salon-track front" style={{transform:`translate3d(calc(${offset}px + var(--front-parallax-x, 0px)),var(--front-parallax-y, 0px),0)`}}>{display.slice(0,7).map((look,i)=><button key={look.code} className={active===i?'active':''} style={{left:`${i*19-4}%`,'--i':i}} onMouseEnter={()=>setActive(i)} onClick={()=>{if(!drag.current.moved)openLook(look)}}><img src={A+look.image} alt={look.name}/><span>View</span></button>)}</div>
     <div className="salon-caption"><em>{display[active].name}</em><span>{display[active].code.replace('L','Look ')} · {display[active].price}</span></div>
     <button className="how" onClick={()=>navigate('/looks')}>How to use this salon</button>
     <p className="salon-help">Drag to wander&nbsp; · &nbsp;Click a look to step closer</p>
