@@ -56,6 +56,12 @@ jobs:
           npm ci
           npm run build
 
+      - name: Build Day 80 Ombrine
+        working-directory: phase-3-complete-websites/site/day-80-ombrine
+        run: |
+          npm ci
+          npm run build
+
       - name: Prepare all website projects
         run: |
           mkdir -p _site
@@ -72,6 +78,12 @@ jobs:
           rsync -a \
             phase-3-complete-websites/site/day-059-creatiq/dist/ \
             _site/phase-3-complete-websites/site/day-059-creatiq/
+
+          # Day 80 is a routed Vite experience. Publish its compiled shell,
+          # local assets, and generated direct-route fallbacks.
+          rsync -a \
+            phase-3-complete-websites/site/day-80-ombrine/dist/ \
+            _site/phase-3-complete-websites/site/day-80-ombrine/
 
       - name: Upload website files
         uses: actions/upload-pages-artifact@v4
