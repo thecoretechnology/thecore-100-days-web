@@ -127,14 +127,14 @@
 html,body{max-width:100%;overflow-x:hidden}
 .site-header>*{min-width:0}
 .login{gap:0}
-.rs-hero-cta{margin-bottom:0}
-.rs-stream-links{margin-top:18px}
+.rs-hero-cta{display:flex;width:max-content;margin:0 auto 48px}
+.rs-stream-links{margin-top:0}
 .contact-detail>a{display:inline-flex;align-items:center;gap:9px;width:max-content;max-width:100%}
 .contact-detail>a span,.contact-social-links a span{font:400 14px/1 var(--sans);flex:0 0 auto;transition:transform .2s ease}
 .contact-detail>a:hover span,.contact-social-links a:hover span{transform:translate(2px,-2px)}
 .contact-social-links a{justify-content:space-between;min-width:72px}
 @media(max-width:650px){
-  .rs-stream-links{margin-top:16px}
+  .rs-hero-cta{margin-bottom:42px}
   .nav a{display:flex;align-items:center;width:100%;min-height:44px}
   .contact-social-links a{min-height:44px;padding:10px 14px}
   .contact-detail>a{width:auto;justify-content:space-between;min-height:44px}
