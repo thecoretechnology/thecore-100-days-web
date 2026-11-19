@@ -63,15 +63,26 @@ body{font-family:"Nunito",Arial,sans-serif;letter-spacing:-.012em}
 .mission-card>img{width:116px;height:134px;margin:0 20px 28px;border-radius:17px}
 .mission-card ul{background:#fff;border-radius:24px;padding:18px 26px;margin:0;flex:1}
 .mission-card li{padding:17px 0;border-color:#dedede;font-size:15px}
-.service-layout{grid-template-columns:.82fr 1.18fr;gap:70px}
-.service-intro h2{font-size:clamp(42px,4.2vw,58px);line-height:1.1;max-width:460px}
-.service-list{gap:64px}
+.service-layout{grid-template-columns:minmax(0,1fr);gap:54px}
+.service-intro{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:22px}
+.service-intro .eyebrow{grid-column:1/-1;justify-self:start;margin-bottom:-2px}
+.service-intro h2{font-size:clamp(42px,4.2vw,58px);line-height:1.1;max-width:900px;margin:0}
+.service-intro>.btn{margin-bottom:4px;white-space:nowrap}
+.golden{display:none}
+.service-list{gap:64px;width:100%}
 .service-card{padding:10px 10px 26px;border-radius:28px;background:var(--cream)}
-.service-image img{height:286px;border-radius:24px}
+.service-image img{height:auto;aspect-ratio:16/9;border-radius:24px}
 .service-copy{padding:26px 26px 0}
 .service-copy h3{font-size:26px}
-.photo-band{height:500px;background:var(--cream);padding:0 0 48px}
-.photo-band img{object-position:center 48%}
+.photo-band{--photo-y:0px;--photo-scale:1.075;position:relative;width:100%;height:auto;aspect-ratio:15/8;background:#edf0f5 url("https://framerusercontent.com/images/u90dCWkxqKxl8wEDgHvad5wBeo.png?width=3000&height=2000") center/cover no-repeat;padding:0;overflow:hidden;isolation:isolate}
+.photo-band-media{position:absolute;inset:-4%;overflow:hidden;clip-path:inset(100% 0 0 0);transition:clip-path 1.05s cubic-bezier(.22,.72,.18,1)}
+.photo-band.is-visible .photo-band-media{clip-path:inset(0 0 0 0)}
+.photo-band img{width:100%;height:112%;max-width:none;object-fit:cover;object-position:center 48%;transform:translate3d(0,var(--photo-y),0) scale(var(--photo-scale));transform-origin:center;will-change:transform}
+.photo-band-arrow{position:absolute;z-index:2;right:clamp(20px,4vw,68px);bottom:clamp(20px,4vw,62px);width:clamp(58px,6vw,92px);height:auto;opacity:0;transform:translateY(-28px) rotate(-5deg);transition:opacity .55s .72s ease,transform .8s .72s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 5px 0 rgba(0,0,0,.08))}
+.photo-band.is-visible .photo-band-arrow{opacity:1;transform:translateY(0) rotate(0);animation:photo-arrow-bob 1.8s 1.55s ease-in-out infinite}
+.photo-band-arrow svg{display:block;width:100%;height:auto;overflow:visible}
+.photo-band-arrow path{fill:var(--yellow);stroke:#050505;stroke-width:5;stroke-linejoin:round;stroke-linecap:round}
+@keyframes photo-arrow-bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(12px) rotate(2deg)}}
 .product-card,.team-card,.blog-card{transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s}
 .product-card:hover,.team-card:hover,.blog-card:hover{transform:translateY(-7px);box-shadow:0 18px 40px #00000010}
 .product-photo img,.team-card img,.blog-image img,.service-image img,.about-photo>img{transition:transform .7s cubic-bezier(.2,.8,.2,1)}

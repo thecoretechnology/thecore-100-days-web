@@ -6,7 +6,7 @@ const IMG = {
   groom: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1000&q=88",
   emergency: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1000&q=88",
   nutrition: "https://images.unsplash.com/photo-1582798358481-d199fb7347bb?auto=format&fit=crop&w=1000&q=88",
-  pets: "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1800&q=90",
+  pets: "https://framerusercontent.com/images/EIIsrolSSqt3mpGd4lJgSay54Gc.png?width=1250&height=1016",
   product1: "https://framerusercontent.com/images/O15uV9m2doXYJRhH116wuMy278.png?height=486&width=406",
   product2: "https://framerusercontent.com/images/utEHLVDhzlfOsKVYygDltvVRU.png?height=498&width=580",
   product3: "https://framerusercontent.com/images/timvNFHGBg79Ra5paqej2xcuj0.png?height=498&width=580",

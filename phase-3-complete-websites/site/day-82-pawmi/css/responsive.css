@@ -137,6 +137,25 @@ a,button{touch-action:manipulation}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js-reveal{opacity:1!important;transform:none!important}}
 
+/* Home services and reference-style full-width pet reveal */
+@media(max-width:800px){
+ .service-intro{min-height:0;grid-template-columns:minmax(0,1fr);align-items:start;gap:20px}
+ .service-intro .eyebrow{grid-column:auto;margin-bottom:0}
+ .service-intro>.btn{justify-self:start;margin:0}
+ .service-list{gap:30px}
+ .photo-band{height:auto;aspect-ratio:4/3}
+ .photo-band img{height:112%;object-position:center 50%}
+}
+@media(max-width:540px){
+ .service-intro{min-height:0}
+ .service-list{gap:22px}
+ .service-image img{height:auto;aspect-ratio:4/3}
+ .photo-band{height:auto;aspect-ratio:1/1.12}
+ .photo-band img{height:114%;object-position:51% 50%}
+ .photo-band-arrow{right:16px;bottom:18px;width:58px}
+}
+@media(prefers-reduced-motion:reduce){.photo-band-media{clip-path:none;transition:none}.photo-band img{transform:none!important}.photo-band-arrow{opacity:1;transform:none;animation:none!important;transition:none}}
+
 /* Final release safeguards and reference-aligned contact FAQ/newsletter */
 html,body{max-width:100%;overflow-x:clip}
 img{height:auto}

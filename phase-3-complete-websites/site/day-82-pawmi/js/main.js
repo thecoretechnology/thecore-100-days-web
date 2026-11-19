@@ -33,8 +33,8 @@ function home(){
  <div class="ticker"><div>GROOMING <b>✦</b> VET SUPPORT <b>✦</b> PET WELLNESS <b>✦</b> PREMIUM MEALS <b>✦</b> DAILY SUPPLIES <b>✦</b> GROOMING <b>✦</b> VET SUPPORT <b>✦</b></div></div>
  <section class="about-preview section cream"><div class="container"><div class="about-heading">${eyebrow("ABOUT US")}<h2>We provide trusted veterinary care, healthy pet essentials, and <span>loving support for every furry companion.</span></h2></div><div class="about-grid"><div class="about-photo"><img src="${IMG.about}" alt="A pet owner spending time with dogs"><div class="stat-card"><strong>15k+</strong><b>Trusted by happy<br>pet families.</b></div></div><div class="mission-card"><h3>Mission highlights</h3><img src="${IMG.mission}" alt="Happy dog portrait"><ul><li><i>✚</i> Expert health support for pets</li><li><i>✿</i> Premium food for daily wellness</li><li><i>◉</i> Toys, food, and daily supplies</li></ul></div></div></div></section>
  <section class="services-preview section"><div class="container service-layout"><div class="service-intro">${eyebrow("SERVICES")}<h2>Trusted care for every furry friend.</h2>${button("services.html","View all services","btn")}<img class="golden" src="${IMG.gallery3}" alt="Golden retriever"></div><div class="service-list">${serviceCards()}</div></div></section>
- <section class="photo-band"><img src="${IMG.pets}" alt="Pets looking at the camera"></section>
- <section class="section cream"><div class="container"><div class="section-head"><div>${eyebrow("OUR PRODUCTS")}<h2>Little things for <span>big happy moments.</span></h2></div>${button("products.html","Explore shop","btn btn-outline")}</div><div class="product-grid">${productCards()}</div></div></section>
+ <section class="photo-band" aria-label="Happy pets"><div class="photo-band-media"><img src="${IMG.pets}" alt="A friendly group of cats, a dog and a rabbit"></div><a class="photo-band-arrow" href="#products" aria-label="Continue to our products"><svg viewBox="0 0 92 132" aria-hidden="true"><path d="M28 7c8 23 10 46 6 69L8 65l25 58 49-39-27 4c5-31 1-58-10-81Z"/></svg></a></section>
+ <section class="section cream" id="products"><div class="container"><div class="section-head"><div>${eyebrow("OUR PRODUCTS")}<h2>Little things for <span>big happy moments.</span></h2></div>${button("products.html","Explore shop","btn btn-outline")}</div><div class="product-grid">${productCards()}</div></div></section>
  <section class="section"><div class="container"><div class="section-head"><div>${eyebrow("OUR TEAM")}<h2>Meet the people behind <span>the paws.</span></h2></div>${button("team.html","Meet our team","btn btn-outline")}</div><div class="team-grid">${teamCards()}</div></div></section>
  <section class="section why-section"><div class="container"><div class="section-head"><div>${eyebrow("WHY PAWMI")}<h2>Trusted care for <span>happy healthy pets.</span></h2></div></div><div class="why-grid"><article class="why-card"><span>✚</span><h3>Trusted pet experts</h3><p>Professional care from experienced veterinarians.</p></article><article class="why-card"><span>✿</span><h3>Complete pet solutions</h3><p>Everything your pets need in one place.</p></article><article class="why-card"><span>♡</span><h3>Always available support</h3><p>Fast help whenever emergencies happen.</p></article></div></div></section>
  <section class="testimonial section cream"><div class="container testimonial-inner">${eyebrow("HAPPY PET PARENTS")}<h2>Trusted reviews from <span>happy pet owners.</span></h2><div class="quote-card"><div class="stars">★★★★★</div><blockquote>“The team made our first visit feel so easy. They were kind, thoughtful and wonderful with our nervous pup. We finally found a place we trust.”</blockquote><b>Sarah M.</b><small>Pet parent of Milo</small><div class="quote-controls"><button data-quote="prev">←</button><button data-quote="next">→</button></div></div></div></section>
@@ -93,7 +93,7 @@ function initMedia(){
 
 function initInteractions(){
  const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
- const revealTargets=$$("#app .section, #app .page-hero, #app .service-card, #app .product-card, #app .team-card, #app .blog-card, #app .cta-banner, #app .photo-band");
+ const revealTargets=$$("#app .section, #app .page-hero, #app .service-card, #app .product-card, #app .team-card, #app .blog-card, #app .cta-banner");
  revealTargets.forEach((el,i)=>{el.classList.add("js-reveal");if(el.matches(".service-card,.product-card,.team-card,.blog-card"))el.style.transitionDelay=`${(i%4)*65}ms`});
  if(!reduceMotion && "IntersectionObserver" in window){
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target)}}),{threshold:.1,rootMargin:"0px 0px -28px 0px"});
@@ -103,6 +103,19 @@ function initInteractions(){
  const headerEl=$(".header");
  const updateHeader=()=>headerEl?.classList.toggle("is-scrolled",window.scrollY>12);
  updateHeader();window.addEventListener("scroll",updateHeader,{passive:true});
+
+ const photoBand=$(".photo-band"),photoBandImage=$(".photo-band img");
+ if(photoBand && photoBandImage){
+  if(reduceMotion){photoBand.classList.add("is-visible")}
+  else{
+   const photoObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");photoObserver.unobserve(entry.target)}}),{threshold:.12});
+   photoObserver.observe(photoBand);
+   let motionFrame=0;
+   const updatePhotoMotion=()=>{motionFrame=0;const rect=photoBand.getBoundingClientRect();const view=window.innerHeight;const progress=Math.max(0,Math.min(1,(view-rect.top)/(view+rect.height)));photoBand.style.setProperty("--photo-y",`${(progress-.5)*42}px`);photoBand.style.setProperty("--photo-scale",String(1.075-progress*.025))};
+   const requestPhotoMotion=()=>{if(!motionFrame)motionFrame=requestAnimationFrame(updatePhotoMotion)};
+   updatePhotoMotion();window.addEventListener("scroll",requestPhotoMotion,{passive:true});window.addEventListener("resize",requestPhotoMotion,{passive:true});
+  }
+ }
 
  const toggle=$(".menu-toggle"),nav=$(".nav"),drop=$(".drop-trigger"),dropWrap=$(".nav-drop");
  const closeDrop=()=>{dropWrap?.classList.remove("show");drop?.setAttribute("aria-expanded","false")};
