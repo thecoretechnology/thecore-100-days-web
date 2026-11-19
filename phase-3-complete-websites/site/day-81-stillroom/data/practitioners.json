@@ -1,0 +1,109 @@
+[
+  {
+    "name": "Maya Okafor",
+    "role": "Integrative psychotherapist \u00b7 Founder",
+    "slug": "maya-okafor",
+    "bio": "Maya opened Stillroom in 2016 after twelve years in NHS and university counselling services.",
+    "focus": "Anxiety \u00b7 Panic \u00b7 Low mood",
+    "days": "Monday, Tuesday and Thursday \u00b7 In person and online",
+    "category": [
+      "anxiety",
+      "grief"
+    ],
+    "image": "https://framerusercontent.com/images/aL3ZbvVnL91z2kwZv4oGzGX3E.webp?height=1536&width=1024",
+    "approach": "Integrative therapy draws on several schools of thought, chosen around the person in front of her."
+  },
+  {
+    "name": "Isla Grant",
+    "role": "CBT therapist",
+    "slug": "isla-grant",
+    "bio": "Isla works in short, structured blocks with people who are exhausted by keeping everything going.",
+    "focus": "Burnout \u00b7 Stress \u00b7 Perfectionism",
+    "days": "Tuesday and Wednesday, until 8pm \u00b7 In person and online",
+    "category": [
+      "anxiety"
+    ],
+    "image": "https://framerusercontent.com/images/ESVOjbzJetFfTd5ZrjFUdsohQ0.webp?height=1536&width=1024",
+    "approach": "Cognitive behavioural therapy with practical, manageable steps between sessions."
+  },
+  {
+    "name": "Ruth Hallam",
+    "role": "Bereavement counsellor",
+    "slug": "ruth-hallam",
+    "bio": "Ruth has sat with grief for over twenty years, in hospices first and at Stillroom since 2018.",
+    "focus": "Grief \u00b7 Loss \u00b7 Life changes",
+    "days": "Wednesday and Friday \u00b7 In person",
+    "category": [
+      "grief"
+    ],
+    "image": "https://framerusercontent.com/images/ahYOpIbmuLBaHcHlLDkVjbCEHyI.webp?height=1536&width=1024",
+    "approach": "A steady, compassionate place to make room for grief and change."
+  },
+  {
+    "name": "Tom Reid",
+    "role": "Couples therapist",
+    "slug": "tom-reid",
+    "bio": "Tom helps couples hear each other again, whether they decide to stay together or not.",
+    "focus": "Couples \u00b7 Communication \u00b7 Separation",
+    "days": "Monday and Thursday evenings, Saturday mornings \u00b7 In person and online",
+    "category": [
+      "couples"
+    ],
+    "image": "https://framerusercontent.com/images/RyWIsrbUvHyhPENBnJa3i63fGao.webp?height=1536&width=1024",
+    "approach": "Relational work that slows conversations down so each person can be heard."
+  },
+  {
+    "name": "Clara Lindqvist",
+    "role": "Breathwork and somatic practitioner",
+    "slug": "clara-lindqvist",
+    "bio": "Clara teaches slow, practical breathing for people whose bodies are stuck on high alert.",
+    "focus": "Sleep \u00b7 Nervous system \u00b7 Panic",
+    "days": "Thursday and Friday \u00b7 In person",
+    "category": [
+      "body"
+    ],
+    "image": "https://framerusercontent.com/images/mIr7nAdlManSqR99DEmfziyn9g.webp?height=1536&width=1024",
+    "approach": "Slow breathing and body awareness, taught in a practical four-session course."
+  },
+  {
+    "name": "Arjun Mehta",
+    "role": "Psychotherapist \u00b7 EMDR",
+    "slug": "arjun-mehta",
+    "bio": "Arjun works with the things people have carried for years and never found words for.",
+    "focus": "Trauma \u00b7 Difficult memories \u00b7 Anger",
+    "days": "Tuesday and Thursday, until 8pm \u00b7 In person and online",
+    "category": [
+      "grief",
+      "body"
+    ],
+    "image": "https://framerusercontent.com/images/PpglRT4GKFHNYYAZFgMPUFa5iYo.webp?height=1536&width=1024",
+    "approach": "Psychotherapy and EMDR for experiences and memories that still feel present."
+  },
+  {
+    "name": "Hannah Bryce",
+    "role": "Nutritional therapist",
+    "slug": "hannah-bryce",
+    "bio": "Hannah looks at food alongside sleep, stress and routine, never as a diet.",
+    "focus": "Energy \u00b7 Gut health \u00b7 Eating patterns",
+    "days": "Wednesday and Friday \u00b7 In person and online",
+    "category": [
+      "body"
+    ],
+    "image": "https://framerusercontent.com/images/wBxVfkFH5SLBGgiFfjY1VMO4.webp?height=1536&width=1024",
+    "approach": "Nutrition support grounded in everyday routines, sleep, stress and food."
+  },
+  {
+    "name": "Daniel Moffat",
+    "role": "Counsellor",
+    "slug": "daniel-moffat",
+    "bio": "Daniel works mostly with people in their twenties working out who they are becoming.",
+    "focus": "Young adults \u00b7 Identity \u00b7 Transitions",
+    "days": "Monday and Friday, Saturday mornings \u00b7 In person and online",
+    "category": [
+      "anxiety",
+      "couples"
+    ],
+    "image": "https://framerusercontent.com/images/Ox3bjbnVvAfG1jzFCFEzh64N03A.webp?height=1536&width=1024",
+    "approach": "Counselling for identity, relationships and the transitions of early adulthood."
+  }
+]

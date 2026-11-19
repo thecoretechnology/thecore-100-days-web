@@ -1,0 +1,1 @@
+Stillroom practitioners page repair: removes oversized/empty vertical spacing, forces the practitioner directory and cards to render visibly, preserves filtering and profile links, and applies responsive 4/2-column grids.

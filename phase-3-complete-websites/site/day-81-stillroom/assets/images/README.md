@@ -1,0 +1,1 @@
+Original Stillroom Framer CDN image assets are mapped in ../data/images.json and ../data/practitioners.json. They are verified against the live reference and currently loaded remotely because direct image downloads were unavailable in this execution environment. If you later download them, keep these descriptive filenames and update the JSON URLs to local relative paths.
