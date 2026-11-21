@@ -3,11 +3,12 @@ const qsa = (s, r = document) => [...r.querySelectorAll(s)];
 const menuButton = qs(".menu-button"),
   menu = qs(".site-menu");
 const closeMenu = () => {
+  if (!menuButton || !menu) return;
   menu.classList.remove("open");
   menuButton.setAttribute("aria-expanded", "false");
   menuButton.setAttribute("aria-label", "Open navigation");
 };
-menuButton.addEventListener("click", () => {
+menuButton?.addEventListener("click", () => {
   const open = !menu.classList.contains("open");
   menu.classList.toggle("open", open);
   menuButton.setAttribute("aria-expanded", String(open));
@@ -17,7 +18,7 @@ menuButton.addEventListener("click", () => {
   );
 });
 menu
-  .querySelectorAll("a")
+  ?.querySelectorAll("a")
   .forEach((a) => a.addEventListener("click", closeMenu));
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".site-header")) closeMenu();
@@ -29,23 +30,23 @@ document.addEventListener("keydown", (e) => {
 const hero = qs(".hero"),
   heroPhoto = qs(".hero-photo");
 const portraits = qsa(".portrait-thumb");
-const portraitUrls = portraits.map((b) => b.querySelector("img").src);
+const portraitUrls = portraits.map((b) => b.querySelector("img")?.src);
 portraits.forEach((button, index) =>
   button.addEventListener("click", () => {
     portraits.forEach((b) => b.classList.remove("active"));
     button.classList.add("active");
-    heroPhoto.style.backgroundImage = `url("${portraitUrls[index]}")`;
-    hero.classList.add("photo-active");
+    if (heroPhoto) heroPhoto.style.backgroundImage = `url("${portraitUrls[index]}")`;
+    hero?.classList.add("photo-active");
   }),
 );
-hero.addEventListener("pointermove", (e) => {
+hero?.addEventListener("pointermove", (e) => {
   if (innerWidth < 901) return;
   const r = hero.getBoundingClientRect();
   hero.style.setProperty("--mx", `${(e.clientX - r.left) / r.width}`);
   if (!hero.classList.contains("photo-active"))
     hero.classList.add("photo-active");
 });
-hero.addEventListener("pointerleave", () =>
+hero?.addEventListener("pointerleave", () =>
   hero.classList.remove("photo-active"),
 );
 
@@ -75,8 +76,10 @@ function updateScroll() {
   const r = services.getBoundingClientRect(),
     range = Math.max(1, services.offsetHeight - innerHeight),
     p = Math.max(0, Math.min(1, -r.top / range));
-  morph.style.transform = `translate(-50%,-50%) rotate(${p * 320}deg) scale(${0.82 + Math.sin(p * Math.PI) * 0.25})`;
-  morph.style.borderRadius = `${45 + p * 15}% ${55 - p * 12}% ${52 + p * 10}% ${48 - p * 9}% / ${55 - p * 10}% ${42 + p * 14}% ${58 - p * 12}% ${45 + p * 9}%`;
+  if (morph) {
+    morph.style.transform = `translate(-50%,-50%) rotate(${p * 320}deg) scale(${0.82 + Math.sin(p * Math.PI) * 0.25})`;
+    morph.style.borderRadius = `${45 + p * 15}% ${55 - p * 12}% ${52 + p * 10}% ${48 - p * 9}% / ${55 - p * 10}% ${42 + p * 14}% ${58 - p * 12}% ${45 + p * 9}%`;
+  }
   notes.forEach((n, i) => {
     const start = i * 0.115,
       end = start + 0.35,
@@ -100,9 +103,39 @@ qsa(".archive-collage figure").forEach((figure, i) =>
 );
 const form = qs(".contact-form"),
   status = qs(".form-status");
-form.addEventListener("submit", (e) => {
+form?.addEventListener("submit", (e) => {
   e.preventDefault();
   if (!form.reportValidity()) return;
-  status.textContent = "Thank you — your project details are ready to send.";
+  if (status)
+    status.textContent = "Thank you — your project details are ready to send.";
+  if (form.dataset.mailto) {
+    const data = new FormData(form);
+    const subject = encodeURIComponent(`Project enquiry from ${data.get("name")}`);
+    const body = encodeURIComponent(
+      [...data.entries()].map(([key, value]) => `${key}: ${value}`).join("\n"),
+    );
+    window.location.href = `mailto:${form.dataset.mailto}?subject=${subject}&body=${body}`;
+  }
   form.reset();
 });
+
+if (document.body.classList.contains("inner-page")) {
+  qsa('a[href$=".html"], a[href*=".html#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if (
+        event.defaultPrevented ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        link.target === "_blank"
+      )
+        return;
+      event.preventDefault();
+      document.body.classList.add("is-leaving");
+      setTimeout(() => (window.location.href = link.href), 180);
+    });
+  });
+}
+window.addEventListener("pageshow", () =>
+  document.body.classList.remove("is-leaving"),
+);
