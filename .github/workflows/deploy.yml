@@ -58,6 +58,12 @@ jobs:
           npm ci
           npm run build
 
+      - name: Build Day 84 Cute AI Studio
+        working-directory: phase-3-complete-websites/site/day-84-cuteaistudio
+        run: |
+          npm ci
+          npm run build
+
       - name: Prepare all website projects
         run: |
           mkdir -p _site
@@ -80,6 +86,12 @@ jobs:
           rsync -a \
             phase-3-complete-websites/site/day-80-ombrine/dist/ \
             _site/phase-3-complete-websites/site/day-80-ombrine/
+
+          # Day 84 is a Vite project. Publish its compiled app with relative
+          # asset URLs so it works from the GitHub Pages subdirectory.
+          rsync -a \
+            phase-3-complete-websites/site/day-84-cuteaistudio/dist/ \
+            _site/phase-3-complete-websites/site/day-84-cuteaistudio/
 
       - name: Upload website files
         uses: actions/upload-pages-artifact@v4
