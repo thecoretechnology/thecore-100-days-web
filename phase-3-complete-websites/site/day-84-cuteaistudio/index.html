@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CuteAIStudio — friendly AI agents for small teams.">
+  <meta name="theme-color" content="#f7f1e6">
+  <title>CuteAIStudio | Friendly AI agents for small teams</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/scout.webp" as="image">
+  <link rel="preload" href="assets/helper.webp" as="image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="CuteAIStudio home"><span class="brand-mark"><i></i><i></i></span><span>CuteAIStudio</span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="agents.html">Agents</a><a href="pricing.html">Pricing</a><a href="#demo">Live demo</a><a href="about.html">About</a>
+    </nav>
+    <a class="button button--primary header-cta" href="#signup">Start free <span aria-hidden="true">→</span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="agents.html">Agents</a><a href="pricing.html">Pricing</a><a href="#demo">Live demo</a><a href="about.html">About</a><a href="#signup">Start free</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-pad">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Six agents, ready today</p>
+        <h1>Cute agents.<br><em>Serious</em> work.</h1>
+        <p class="hero-lede">AI agents that write, tidy, answer and build, so your people don’t have to.</p>
+        <a class="button button--primary" href="#signup">Hire your first agent <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-team" aria-label="The six CuteAIStudio agents">
+        <figure class="hero-agent mint" style="--delay:.02s"><img src="assets/scout.webp" alt="Scout robot"><figcaption>Scout</figcaption></figure>
+        <figure class="hero-agent pink" style="--delay:.08s"><img src="assets/helper.webp" alt="Helper robot"><figcaption>Helper</figcaption></figure>
+        <figure class="hero-agent lilac" style="--delay:.14s"><img src="assets/writer.webp" alt="Writer robot"><figcaption>Writer</figcaption></figure>
+        <figure class="hero-agent yellow" style="--delay:.2s"><img src="assets/builder.webp" alt="Builder robot"><figcaption>Builder</figcaption></figure>
+        <figure class="hero-agent blue" style="--delay:.26s"><img src="assets/analyst.webp" alt="Analyst robot"><figcaption>Analyst</figcaption></figure>
+        <figure class="hero-agent peach" style="--delay:.32s"><img src="assets/tidy.webp" alt="Tidy robot"><figcaption>Tidy</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="hello-panel" id="about">
+      <div class="robot-eyes" aria-hidden="true"><i></i><i></i></div>
+      <div class="hello-copy reveal"><p class="eyebrow eyebrow--light">Say hello</p><h2>Hello. We’re your<br>new team.</h2><p>Six agents that never sleep, never sulk and always ask before sending.</p></div>
+    </section>
+
+    <section class="agents section-pad" id="agents">
+      <div class="section-heading reveal"><div><p class="eyebrow">The team</p><h2>Six agents. One tidy team.</h2></div><a class="button button--outline" href="#agents-grid">Meet all agents <span aria-hidden="true">→</span></a></div>
+      <div class="agent-grid" id="agents-grid">
+        <a class="agent-card reveal" href="agents.html#writer"><div class="agent-art lilac"><img src="assets/writer.webp" alt="Writer robot"></div><div class="card-title"><h3>Writer</h3><span>Content</span></div><p>Drafts posts, emails and replies in your voice.</p><q>Turn these notes into a launch post.</q></a>
+        <a class="agent-card reveal" href="agents.html#helper"><div class="agent-art pink"><img src="assets/helper.webp" alt="Helper robot"></div><div class="card-title"><h3>Helper</h3><span>Support</span></div><p>Answers customers kindly, any hour.</p><q>Sort out this invoice question.</q></a>
+        <a class="agent-card reveal" href="agents.html#tidy"><div class="agent-art peach"><img src="assets/tidy.webp" alt="Tidy robot"></div><div class="card-title"><h3>Tidy</h3><span>Clean-up</span></div><p>Sweeps inboxes, CRMs and messy data.</p><q>Merge the duplicate contacts.</q></a>
+        <a class="agent-card reveal" href="agents.html#analyst"><div class="agent-art blue"><img src="assets/analyst.webp" alt="Analyst robot"></div><div class="card-title"><h3>Analyst</h3><span>Reports</span></div><p>Reads the numbers and tells you why.</p><q>Why did sign-ups dip last week?</q></a>
+        <a class="agent-card reveal" href="agents.html#scout"><div class="agent-art mint"><img src="assets/scout.webp" alt="Scout robot"></div><div class="card-title"><h3>Scout</h3><span>Research</span></div><p>Watches the web and flags what matters.</p><q>Track what competitors ship.</q></a>
+        <a class="agent-card reveal" href="agents.html#builder"><div class="agent-art yellow"><img src="assets/builder.webp" alt="Builder robot"></div><div class="card-title"><h3>Builder</h3><span>Automations</span></div><p>Wires your tools into tidy workflows.</p><q>When a deal closes, start onboarding.</q></a>
+      </div>
+    </section>
+
+    <section class="demo section-pad split-section" id="demo">
+      <div class="section-copy reveal"><p class="eyebrow">Live demo</p><h2>Watch them work.</h2><p>Pick an agent and see how it handles a real request.</p></div>
+      <div class="demo-wrap reveal">
+        <img class="demo-mascot" id="demo-mascot" src="assets/writer.webp" alt="Writer robot">
+        <div class="chat-card">
+          <div class="chat-tabs" role="tablist" aria-label="Choose a demo agent">
+            <button class="chat-tab is-active" role="tab" aria-selected="true" data-agent="writer"><img src="assets/writer.webp" alt="">Writer</button>
+            <button class="chat-tab" role="tab" aria-selected="false" data-agent="helper"><img src="assets/helper.webp" alt="">Helper</button>
+            <button class="chat-tab" role="tab" aria-selected="false" data-agent="analyst"><img src="assets/analyst.webp" alt="">Analyst</button>
+            <span class="live-dot">Live demo</span>
+          </div>
+          <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+          <form class="chat-form" id="chat-form"><label class="sr-only" for="chat-input">Ask the selected agent anything</label><input id="chat-input" autocomplete="off" placeholder="Ask Writer anything…" maxlength="180"><button type="submit" aria-label="Send message">↑</button></form>
+        </div>
+      </div>
+    </section>
+
+    <section class="process section-pad" id="how-it-works">
+      <div class="reveal"><p class="eyebrow">How it works</p><h2>Three steps. Zero fuss.</h2></div>
+      <div class="steps">
+        <article class="step is-active" data-step="0"><small>Step 1</small><h3>Pick an agent</h3><p>Choose Writer, Helper or any of the six.</p></article>
+        <article class="step" data-step="1"><small>Step 2</small><h3>Give it a job</h3><p>Describe the task in plain words, once.</p></article>
+        <article class="step" data-step="2"><small>Step 3</small><h3>Get it done</h3><p>It works, checks in and reports back.</p></article>
+      </div>
+      <div class="step-journey" aria-hidden="true">
+        <svg class="journey-line" viewBox="0 0 1200 760" preserveAspectRatio="none"><path d="M90 380 C330 670 405 350 600 430 S920 690 1110 595"/></svg>
+        <img class="journey-robot is-step-1" src="assets/builder.webp" alt="">
+        <div class="journey-stop stop-1 is-active"><b>1</b></div>
+        <div class="journey-stop stop-2"><b>2</b></div>
+        <div class="journey-stop stop-3"><b>3</b></div>
+      </div>
+    </section>
+
+    <section class="integrations section-pad" id="integrations">
+      <div class="center-heading reveal"><p class="eyebrow">Works with</p><h2>Plugs into the tools you<br>already use.</h2></div>
+      <div class="marquee" aria-label="Integrations"><div class="marquee-track">
+        <span>✉️ Gmail</span><span>◩ Notion</span><span>△ Google Drive</span><span>◉ HubSpot</span><span>◆ Shopify</span><span>⌁ Zendesk</span><span>◒ Linear</span><span>◉ GitHub</span>
+        <span aria-hidden="true">✉️ Gmail</span><span aria-hidden="true">◩ Notion</span><span aria-hidden="true">△ Google Drive</span><span aria-hidden="true">◉ HubSpot</span>
+      </div></div>
+      <div class="marquee marquee--reverse" aria-hidden="true"><div class="marquee-track"><span>◈ Figma</span><span>▰ Stripe</span><span>◉ Intercom</span><span>▲ Airtable</span><span>▦ Trello</span><span>◆ Dropbox</span><span>● Asana</span><span>◫ Jira</span><span>◈ Figma</span><span>▰ Stripe</span><span>◉ Intercom</span></div></div>
+    </section>
+
+    <section class="pricing section-pad" id="pricing">
+      <div class="center-heading reveal"><p class="eyebrow">Pricing</p><h2>Hire one. Or the whole team.</h2>
+        <div class="billing"><div role="radiogroup" aria-label="Billing period"><button class="is-active" data-period="monthly" role="radio" aria-checked="true">Monthly</button><button data-period="annual" role="radio" aria-checked="false">Annual</button></div><span>2 months free</span></div>
+      </div>
+      <div class="pricing-grid">
+        <article class="price-card reveal"><div class="price-bots"><img src="assets/writer.webp" alt="Writer robot"></div><h3>Solo</h3><p>One agent for one busy person.</p><p class="price"><strong>$0</strong><span>/ mo</span></p><small>Free forever</small><ul><li>1 agent of your choice</li><li>100 tasks a month</li><li>Email help</li></ul><a href="#signup" class="button button--outline">Start free</a></article>
+        <article class="price-card price-card--popular reveal"><div class="price-bots"><img src="assets/helper.webp" alt="Helper robot"><img src="assets/builder.webp" alt="Builder robot"><img src="assets/scout.webp" alt="Scout robot"></div><div class="card-title"><h3>Team</h3><span>Most hired</span></div><p>Three agents that share one inbox.</p><p class="price"><strong data-monthly="$29" data-annual="$24">$29</strong><span>/ mo</span></p><small data-billing-label>Billed monthly</small><ul><li>3 agents</li><li>2,000 tasks a month</li><li>Shared team inbox</li></ul><a href="#signup" class="button button--primary">Hire the team</a></article>
+        <article class="price-card reveal"><div class="price-bots price-bots--six"><img src="assets/tidy.webp" alt="Tidy robot"><img src="assets/analyst.webp" alt="Analyst robot"><img src="assets/writer.webp" alt="Writer robot"><img src="assets/helper.webp" alt="Helper robot"><img src="assets/builder.webp" alt="Builder robot"><img src="assets/scout.webp" alt="Scout robot"></div><h3>Studio</h3><p>All six agents, working together.</p><p class="price"><strong data-monthly="$79" data-annual="$66">$79</strong><span>/ mo</span></p><small data-billing-label>Billed monthly</small><ul><li>All 6 agents</li><li>Unlimited tasks</li><li>Priority help</li></ul><a href="#signup" class="button button--outline">Get Studio</a></article>
+      </div>
+    </section>
+
+    <section class="testimonials section-pad split-section">
+      <div class="section-copy reveal"><p class="eyebrow">Kind words</p><h2>People like having them around.</h2><p>Small teams, big sighs of relief.</p></div>
+      <div class="quote-stack">
+        <article class="quote quote--purple"><h3>“Helper answers our customers at 3am and still sounds like us.”</h3><p>Maya Ortiz <span>Founder, online plant shop</span></p></article>
+        <article class="quote quote--mint"><h3>“Tidy merged four thousand duplicate contacts before my coffee went cold.”</h3><p>Daniel Reyes <span>Sales lead, design agency</span></p></article>
+        <article class="quote quote--pink"><h3>“Writer drafts our Monday update. I just press send.”</h3><p>Kai Nguyen <span>Operations, bakery chain</span></p></article>
+      </div>
+    </section>
+
+    <section class="faq section-pad split-section" id="faq">
+      <div class="faq-title reveal"><p class="eyebrow">FAQ</p><h2>Questions,<br>answered.</h2><div class="faq-helper pink"><img src="assets/helper.webp" alt="Helper robot"><span>Ask me</span></div></div>
+      <div class="faq-list">
+        <details><summary>Do I need to code?<span>+</span></summary><p>No. Tell an agent what you need in everyday language and it handles the setup with you.</p></details>
+        <details><summary>Will an agent send anything without me?<span>+</span></summary><p>No. Agents ask before sending, publishing or changing anything important.</p></details>
+        <details><summary>Which tools does it work with?<span>+</span></summary><p>Gmail, Notion, Drive, HubSpot, Shopify, Linear and many more. New connections arrive regularly.</p></details>
+        <details><summary>Can I change plans later?<span>+</span></summary><p>Yes. Upgrade, downgrade or swap your selected agents whenever your team changes.</p></details>
+        <details><summary>Who can see my data?<span>+</span></summary><p>Only the people you approve. Your workspace stays private and your data is never sold.</p></details>
+      </div>
+    </section>
+
+    <section class="signup section-pad" id="signup">
+      <img class="signup-bot signup-helper" src="assets/helper.webp" alt=""><img class="signup-bot signup-builder" src="assets/builder.webp" alt="">
+      <div><p class="eyebrow">Get started</p><h2>Hire your first agent.</h2><p>Join the waitlist and we’ll set you up this week.</p></div>
+      <form class="waitlist-form" id="waitlist-form" novalidate>
+        <label>Your name<input name="name" autocomplete="name" required placeholder="Sam Rivera"><span class="field-error"></span></label>
+        <label>Work email<input name="email" type="email" autocomplete="email" required placeholder="sam@company.com"><span class="field-error"></span></label>
+        <label>Team size<select name="teamSize"><option>Just me</option><option>2 to 10</option><option>11 to 50</option><option>51 or more</option></select></label>
+        <button class="button button--outline" type="submit">Join the waitlist</button><p class="form-status" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-team" aria-hidden="true"><span class="lilac"><img src="assets/writer.webp" alt=""></span><span class="yellow"><img src="assets/builder.webp" alt=""></span><span class="mint"><img src="assets/scout.webp" alt=""></span><span class="pink"><img src="assets/helper.webp" alt=""></span><span class="peach"><img src="assets/tidy.webp" alt=""></span><span class="blue"><img src="assets/analyst.webp" alt=""></span></div>
+    <div class="footer-main">
+      <div class="footer-intro"><a class="brand brand--light" href="index.html"><span class="brand-mark"><i></i><i></i></span><span>CuteAIStudio</span></a><p>Friendly AI agents for small teams that would rather do the fun part.</p><a href="mailto:hello@example.com">hello@example.com</a></div>
+      <div><h3>Product</h3><a href="agents.html">Agents</a><a href="pricing.html">Pricing</a><a href="index.html#demo">Live demo</a></div>
+      <div><h3>Company</h3><a href="about.html">About</a><a href="#faq">FAQ</a><a href="#signup">Waitlist</a></div>
+    </div>
+    <p class="footer-wordmark">CuteAIStudio</p><div class="footer-bottom"><span>© 2026 CuteAIStudio</span><span>Made by humans, tidied by robots</span></div>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>
