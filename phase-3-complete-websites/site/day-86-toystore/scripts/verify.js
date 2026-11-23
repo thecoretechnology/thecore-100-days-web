@@ -23,10 +23,19 @@ for (const file of files.filter(file => file.endsWith('.js'))) {
 
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, 'utf8');
-  const refs = [...html.matchAll(/(?:href|src)=["'](\/[^"']*)["']/g)].map(match => match[1]);
+  const baseHref = html.match(/<base\s+href=["']([^"']+)["']/i)?.[1] || '';
+  const baseDir = path.resolve(path.dirname(file), decodeURIComponent(baseHref));
+  const documentWithoutBase = html.replace(/<base\s+href=["'][^"']+["']\s*\/?\s*>/i, '');
+  const refs = [...documentWithoutBase.matchAll(/(?:href|src)=["']([^"']+)["']/g)].map(match => match[1]);
   for (const ref of refs) {
-    let local = path.join(root, decodeURIComponent(ref.replace(/^\//, '')));
-    if (ref.endsWith('/')) local = path.join(local, 'index.html');
+    if (/^(?:[a-z]+:|\/\/|#)/i.test(ref)) continue;
+    const cleanRef = decodeURIComponent(ref.split(/[?#]/)[0]);
+    let local = path.resolve(baseDir, cleanRef);
+    if (cleanRef.endsWith('/')) local = path.join(local, 'index.html');
+    if (local !== root && !local.startsWith(`${root}${path.sep}`)) {
+      failures.push(`Local reference escapes the site root in ${path.relative(root, file)}: ${ref}`);
+      continue;
+    }
     if (!fs.existsSync(local)) failures.push(`Broken local reference in ${path.relative(root, file)}: ${ref}`);
   }
 }
@@ -38,8 +47,8 @@ else {
   const slugs = [...source.matchAll(/"slug":\s*"([^"]+)"/g)].map(match => match[1]);
   const imagePaths = [...source.matchAll(/\"image\":\s*\"([^\"]+)\"/g)].map(match => match[1]);
   for (const imagePath of imagePaths) {
-    if (!imagePath.startsWith('/')) failures.push(`Product image must use a root-relative local path: ${imagePath}`);
-    else if (!fs.existsSync(path.join(root, imagePath.replace(/^\//, '')))) failures.push(`Missing bundled product image: ${imagePath}`);
+    if (imagePath.startsWith('/')) failures.push(`Product image must use a site-relative local path: ${imagePath}`);
+    else if (!fs.existsSync(path.join(root, imagePath))) failures.push(`Missing bundled product image: ${imagePath}`);
   }
   if (imagePaths.length !== 16) failures.push(`Expected 16 product image paths, found ${imagePaths.length}`);
   for (const slug of slugs) {
@@ -57,5 +66,5 @@ console.log('ToyStore verification PASSED');
 console.log(` - ${htmlFiles.length} HTML pages found`);
 console.log(` - ${productPages.length} product detail pages found`);
 console.log(' - All JavaScript files pass node --check');
-console.log(' - All root-relative local links and asset references resolve');
+console.log(' - All site-relative local links and asset references resolve');
 console.log(' - All 16 product records have matching detail routes');

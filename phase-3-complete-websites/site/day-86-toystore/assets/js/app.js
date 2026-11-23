@@ -13,7 +13,7 @@
     : `<span class="missing" role="img" aria-label="Image unavailable">Image unavailable</span>`;
 
   function productCard(product) {
-    return `<a class="product-card" href="/product/${product.slug}/" aria-label="View ${product.name}, ${money(product.price)}">
+    return `<a class="product-card" href="product/${product.slug}/" aria-label="View ${product.name}, ${money(product.price)}">
       <div class="product-image">${imageMarkup(product)}</div>
       <div class="product-info"><h3>${product.name}</h3><div class="price">${money(product.price)}</div></div>
     </a>`;
@@ -48,7 +48,7 @@
     renderGrid('[data-products="related"]', toys.filter(p => p.slug !== currentProduct.slug && p.category === currentProduct.category).slice(0, 4));
     document.title = `${currentProduct.name} — ToyStore`;
   } else if (detail) {
-    detail.innerHTML = '<div class="page-content"><h1>Product not found</h1><p><a class="btn" href="/catalog/">Return to Catalog</a></p></div>';
+    detail.innerHTML = '<div class="page-content"><h1>Product not found</h1><p><a class="btn" href="catalog/">Return to Catalog</a></p></div>';
   }
 
   // Restore only valid cart records. Invalid/corrupt localStorage is safely ignored.
@@ -89,7 +89,7 @@
     $$('[data-cart-count]').forEach(node => { node.textContent = cartCount(); });
     if (cartItems) {
       if (!cart.length) {
-        cartItems.innerHTML = '<div class="cart-empty"><p>Your cart is empty.</p><a class="btn" href="/catalog/">Continue Shopping</a></div>';
+        cartItems.innerHTML = '<div class="cart-empty"><p>Your cart is empty.</p><a class="btn" href="catalog/">Continue Shopping</a></div>';
       } else {
         cartItems.innerHTML = cart.map(item => {
           const product = productBySlug(item.slug);

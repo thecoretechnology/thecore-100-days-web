@@ -4,7 +4,7 @@ window.TOYS = [
     "name": "Teddy Bear",
     "price": 30,
     "category": "Stuffed Animals",
-    "image": "/assets/images/products/teddy-bear.webp",
+    "image": "assets/images/products/teddy-bear.webp",
     "sku": "35009"
   },
   {
@@ -12,7 +12,7 @@ window.TOYS = [
     "name": "Mega Plush Toy",
     "price": 38,
     "category": "Stuffed Animals",
-    "image": "/assets/images/products/mega-plush-toy.webp",
+    "image": "assets/images/products/mega-plush-toy.webp",
     "sku": "35010"
   },
   {
@@ -20,7 +20,7 @@ window.TOYS = [
     "name": "Cute Dog",
     "price": 24,
     "category": "Stuffed Animals",
-    "image": "/assets/images/products/cute-dog.webp",
+    "image": "assets/images/products/cute-dog.webp",
     "sku": "35011"
   },
   {
@@ -28,7 +28,7 @@ window.TOYS = [
     "name": "Little Friend",
     "price": 27,
     "category": "Stuffed Animals",
-    "image": "/assets/images/products/little-friend.webp",
+    "image": "assets/images/products/little-friend.webp",
     "sku": "35012"
   },
   {
@@ -36,7 +36,7 @@ window.TOYS = [
     "name": "Christmas Deer",
     "price": 19,
     "category": "Stuffed Animals",
-    "image": "/assets/images/products/christmas-deer.webp",
+    "image": "assets/images/products/christmas-deer.webp",
     "sku": "35013"
   },
   {
@@ -44,7 +44,7 @@ window.TOYS = [
     "name": "Pluto Yellow Dog",
     "price": 28,
     "category": "Stuffed Animals",
-    "image": "/assets/images/products/pluto-yellow-dog.webp",
+    "image": "assets/images/products/pluto-yellow-dog.webp",
     "sku": "35014"
   },
   {
@@ -52,7 +52,7 @@ window.TOYS = [
     "name": "Grey Elephant",
     "price": 45,
     "category": "Stuffed Animals",
-    "image": "/assets/images/products/grey-elephant.webp",
+    "image": "assets/images/products/grey-elephant.webp",
     "sku": "35015"
   },
   {
@@ -60,7 +60,7 @@ window.TOYS = [
     "name": "Funny Clown",
     "price": 36,
     "category": "Stuffed Animals",
-    "image": "/assets/images/products/funny-clown.webp",
+    "image": "assets/images/products/funny-clown.webp",
     "sku": "35016"
   },
   {
@@ -68,7 +68,7 @@ window.TOYS = [
     "name": "Happy Flower",
     "price": 38,
     "category": "Wooden Toys",
-    "image": "/assets/images/products/happy-flower.webp",
+    "image": "assets/images/products/happy-flower.webp",
     "sku": "35017"
   },
   {
@@ -76,7 +76,7 @@ window.TOYS = [
     "name": "Lift Machine",
     "price": 24,
     "category": "Wooden Toys",
-    "image": "/assets/images/products/lift-machine.webp",
+    "image": "assets/images/products/lift-machine.webp",
     "sku": "35018"
   },
   {
@@ -84,7 +84,7 @@ window.TOYS = [
     "name": "Wooden Camera",
     "price": 32,
     "category": "Wooden Toys",
-    "image": "/assets/images/products/wooden-camera.webp",
+    "image": "assets/images/products/wooden-camera.webp",
     "sku": "35019"
   },
   {
@@ -92,7 +92,7 @@ window.TOYS = [
     "name": "Little Rabbit",
     "price": 16,
     "category": "Wooden Toys",
-    "image": "/assets/images/products/little-rabbit.webp",
+    "image": "assets/images/products/little-rabbit.webp",
     "sku": "35020"
   },
   {
@@ -100,7 +100,7 @@ window.TOYS = [
     "name": "Rainbow Truck",
     "price": 28,
     "category": "Wooden Toys",
-    "image": "/assets/images/products/rainbow-truck.webp",
+    "image": "assets/images/products/rainbow-truck.webp",
     "sku": "35021"
   },
   {
@@ -108,7 +108,7 @@ window.TOYS = [
     "name": "Happy Dog",
     "price": 30,
     "category": "Wooden Toys",
-    "image": "/assets/images/products/happy-dog.webp",
+    "image": "assets/images/products/happy-dog.webp",
     "sku": "35022"
   },
   {
@@ -116,7 +116,7 @@ window.TOYS = [
     "name": "Caterpillar",
     "price": 18,
     "category": "Wooden Toys",
-    "image": "/assets/images/products/caterpillar.webp",
+    "image": "assets/images/products/caterpillar.webp",
     "sku": "35023"
   },
   {
@@ -124,7 +124,7 @@ window.TOYS = [
     "name": "Wooden Tractor",
     "price": 22,
     "category": "Wooden Toys",
-    "image": "/assets/images/products/wooden-tractor.webp",
+    "image": "assets/images/products/wooden-tractor.webp",
     "sku": "35024"
   }
 ];
