@@ -1,0 +1,12 @@
+{
+  "name": "day-86-toystore",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static multi-page ToyStore reference recreation",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "build": "node scripts/verify.js",
+    "test": "node scripts/verify.js"
+  }
+}
