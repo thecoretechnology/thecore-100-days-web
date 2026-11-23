@@ -64,6 +64,12 @@ jobs:
           npm ci
           npm run build
 
+      - name: Build Day 85 Anthesis
+        working-directory: phase-3-complete-websites/site/day-85-anthesis
+        run: |
+          npm ci
+          npm run build
+
       - name: Prepare all website projects
         run: |
           mkdir -p _site
@@ -92,6 +98,12 @@ jobs:
           rsync -a \
             phase-3-complete-websites/site/day-84-cuteaistudio/dist/ \
             _site/phase-3-complete-websites/site/day-84-cuteaistudio/
+
+          # Day 85 is a routed Vite project. Publish its compiled app and
+          # generated GitHub Pages route fallback instead of the raw source.
+          rsync -a \
+            phase-3-complete-websites/site/day-85-anthesis/dist/ \
+            _site/phase-3-complete-websites/site/day-85-anthesis/
 
       - name: Upload website files
         uses: actions/upload-pages-artifact@v4
