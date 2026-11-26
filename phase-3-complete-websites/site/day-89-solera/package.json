@@ -1,0 +1,1 @@
+{"name":"day-89-solera","private":true,"scripts":{"dev":"python3 -m http.server 4175 --directory ../../../..","build":"node scripts/verify.mjs"}}
