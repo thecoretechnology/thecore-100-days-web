@@ -58,11 +58,9 @@ function header(theme = "light") {
   return `<header class="header header--${theme}">
     <a class="brand" href="${link()}"><img src="${A}images/${theme === "light" ? "logo-light" : "logo-dark"}.svg" alt="Smash Hit"></a>
     <nav class="nav" aria-label="Main navigation">
-      <a href="${link()}">Home</a><a href="${link("story/")}">Story</a><a href="${link("programs/")}">Programs</a><a href="${link("schedule/")}">Schedule</a>
-      <button class="pages-toggle" type="button" aria-expanded="false">All Pages</button><a href="${link("get-in-touch/")}">Get in Touch</a>
+      <a href="${link()}">Home</a><a href="${link("story/")}">Story</a><a href="${link("programs/")}">Programs</a><a href="${link("schedule/")}">Schedule</a><a href="${link("get-in-touch/")}">Get in Touch</a>
     </nav>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
-    <div class="pages-menu"><a href="${link("blog/")}">Blog</a><a href="${link("get-in-touch/")}">Get In Touch</a></div>
   </header>`;
 }
 
@@ -76,7 +74,7 @@ function footer() {
 }
 
 function introStats() {
-  return `<section class="intro section"><div class="section-grid"><div class="eyebrow reveal">LEADING #1 TENNIS CENTRE</div><div><h2 class="display reveal">We want to create an environment ideal for building craft. Our goal is to become the best tennis perfomance centre in the world.</h2>${button("Get In Touch", "get-in-touch/", "text-link")}</div></div>
+  return `<section class="intro section"><div class="section-grid"><div class="eyebrow reveal">LEADING #1 TENNIS CENTRE</div><div><h2 class="display reveal">We want to create an environment ideal for building craft. Our goal is to become the best tennis perfomance centre in the world.</h2></div></div>
     <div class="stats"><div><strong>10+</strong><span>Professional trainers</span></div><div><strong>12</strong><span>Classes</span></div><div><strong>18</strong><span>Courts</span></div><div><strong>10k+</strong><span>Students</span></div></div></section>`;
 }
 
@@ -111,7 +109,7 @@ function innerHero(kicker, title, image, position="center") {
 }
 
 function home() {
-  return `<main id="main"><section class="home-hero">${header("light")}<video autoplay muted loop playsinline poster="${A}images/hero.jpg"><source src="${A}video/hero.mp4" type="video/mp4"></video><div class="shade"></div><div class="hero-copy"><h1>Being fast in tennis<br>is everything.</h1><p>Study <i></i> Practice <i></i> Play <i></i> Win</p>${button("Apply For Camp", "get-in-touch/", "btn btn--outline")}</div></section>${introStats()}${storySection()}${classesSection()}<section class="court-break"></section>${coachesSection()}${processSection()}${testimonialSection()}${pricing()}</main>${footer()}`;
+  return `<main id="main"><section class="home-hero">${header("light")}<video autoplay muted loop playsinline poster="${A}images/hero.jpg"><source src="${A}video/hero.mp4" type="video/mp4"></video><div class="shade"></div><div class="hero-copy"><h1>Being fast in tennis<br>is everything.</h1><p>Study <i></i> Practice <i></i> Play <i></i> Win</p>${button("Apply For Camp", "get-in-touch/", "btn btn--outline")}</div></section>${introStats()}${storySection()}${classesSection()}${coachesSection()}${processSection()}${testimonialSection()}${pricing()}</main>${footer()}`;
 }
 
 function storyPage() {
